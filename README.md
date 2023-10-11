@@ -7,6 +7,10 @@
     table {
         width: 50%;
     }
+
+    .header {
+        font-weight: bold;
+    }
 </style>
 
 <pre align="center">
@@ -35,7 +39,7 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
     <tr>
         <th colspan="3">Dados para cada arquivo</th>
     </tr>
-    <tr>
+    <tr class="header">
         <td>Dado</td>
         <td>Unidade</td>
         <td>Arquivos</td>
@@ -46,8 +50,18 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <td>DlCtrlSinr; DlDataSinr; RxPacketTrace</td>
     </tr>
     <tr>
+        <td>pathloss</td>
+        <td>dB</td>
+        <td>UlPathlossTrace; DlPathlossTrace</td>
+    </tr>
+    <tr>
         <td>time</td>
         <td>seconds</td>
         <td>*</td>
+    </tr>
+        <tr>
+        <td>packetSize</td>
+        <td>bytes</td>
+        <td>NrDlPdcpRxStats; NrDlPdcpTxStats; NrUlPdcpRxStats; NrUlPdcpTxStats;</td>
     </tr>
 </table>
