@@ -1,22 +1,3 @@
-<style>
-
-    td, th {
-        text-align: center;
-    }
-
-    table {
-        width: 100%;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    .bold {
-        font-weight: bold;
-    }
-</style>
-
 <pre align="center">
     Centro Federal de Educação Tecnológica de Minas Gerais <br>
     Curso Técnico Integrado em Informática
@@ -39,6 +20,7 @@ Nesta seção, é tratada uma explicação das saídas da simulação do arquivo
 
 A tabela abaixo lista a maior parte das informações coletadas das simulações feitas pela equipe. Algumas informações, como as saídas da camada PHY e MAC não estão presentes, pois, por motivos explicados na seção 2 do relatório final, essas informações não são relevantes para a pesquisa.
 
+<link rel="stylesheet" href="style.css">
 
 <table align="center">
     <thead>

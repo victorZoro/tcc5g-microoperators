@@ -1,0 +1,16 @@
+td,
+th {
+  text-align: center;
+}
+
+table {
+  width: 100vw;
+}
+
+p {
+  margin: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
