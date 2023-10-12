@@ -25,9 +25,6 @@ Nesta seção, é tratada uma explicação das saídas da simulação do arquivo
 
 A tabela abaixo lista a maior parte das informações coletadas das simulações feitas pela equipe. Algumas informações, como as saídas da camada PHY e MAC não estão presentes, pois, por motivos explicados na seção 2 do relatório final, essas informações não são relevantes para a pesquisa.
 
-<link rel="stylesheet" href="style.css">
-
-
 <table align="center">
     <thead>
         <th colspan="5">Dados para cada arquivo</th>
@@ -41,9 +38,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">SINR</td>
             <td rowspan="2">dB</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>-</td>
                 <td>-</td>
@@ -57,9 +54,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">pathLoss</td>
             <td rowspan="2">dB</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>-</td>
                 <td>-</td>
@@ -72,9 +69,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">time</td>
             <td rowspan="2">seconds</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>*</td>
                 <td>*</td>
@@ -84,9 +81,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">packetSize</td>
             <td rowspan="2">bytes</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>
                     <p>NrDlPdcpRxStats</p>
@@ -106,9 +103,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">delay</td>
             <td rowspan="2">seconds</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>
                     <p>NrDlPdcpStatsE2E</p>
@@ -128,9 +125,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">TxBytes</td>
             <td rowspan="2">bytes</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>
                     <p>NrDlPdcpStatsE2E</p>
@@ -146,9 +143,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">RxBytes</td>
             <td rowspan="2">bytes</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>
                     <p>NrDlPdcpStatsE2E</p>
@@ -164,9 +161,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">direction</td>
             <td rowspan="2">UL/DL</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>-</td>
                 <td>-</td>
@@ -176,9 +173,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">CQI</td>
             <td rowspan="2">?</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>-</td>
                 <td>-</td>
@@ -188,9 +185,9 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
         <tr rowspan="2">
             <td rowspan="2">corrupt</td>
             <td rowspan="2">?</td>
-            <td class="bold">PDCP</th>
-            <td class="bold">RLC</th>
-            <td class="bold">Others</th>
+            <th>PDCP</th>
+            <th>RLC</th>
+            <th>Others</th>
             <tr>
                 <td>-</td>
                 <td>-</td>
@@ -200,18 +197,19 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
     </tbody>
 </table>
 
-<div style="display: flex; width: 100%; justify-content: center; gap: 50px;">
-    <p class="bold">Legenda:</p>
-    <span><strong>-</strong> &nbsp : não possui.</span>
-    <span><strong>*</strong> &nbsp : todos possuem.</span>
+
+
+<div align="center">
+
+**Legenda:** &nbsp;&nbsp;&nbsp;&nbsp; **-** : não possui. &nbsp;&nbsp;&nbsp;&nbsp; <strong>*</strong> : todos possuem.
+
 </div>
 
-<div style="display: flex; width: 100%; justify-content: right; font-size: 18px">
-    <a href="#" style="display:flex; align-items: center; margin: 50px 0;">
-        <span>☝️ Retornar ao topo.</span>
-    </a>
-</div>
+<div align="right">
 
+[☝️ Retornar ao topo.](#monetização-do-5g-em-cenários-locais-e-implementação-de-microoperadoras)
+
+</div>
 
 ## Diagrama de Classes
 
@@ -332,8 +330,8 @@ classDiagram
 
 </div>
 
-<div style="display: flex; width: 100%; justify-content: right; font-size: 18px">
-    <a href="#" style="display:flex; align-items: center; margin: 50px 0;">
-        <span>☝️ Retornar ao topo.</span>
-    </a>
+<div align="right">
+
+[☝️ Retornar ao topo.](#monetização-do-5g-em-cenários-locais-e-implementação-de-microoperadoras)
+
 </div>
