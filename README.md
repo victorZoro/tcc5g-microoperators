@@ -228,9 +228,9 @@ classDiagram
   direction TB
 
   note for Dataset "linkType stands for uplink ('UL') or downlink ('DL')."
+  note for FilePaths "Singleton"
 
   class Dataset {
-    <<abstract>>
     # dataset: DataFrame
     + time: Series
     + linkType: str
@@ -243,7 +243,6 @@ classDiagram
   }
 
   class SINR {
-    <<abstract>>
     + SINR: Series
     + __init__(self, filename: str)
   }
@@ -264,16 +263,17 @@ classDiagram
   }
 
   class FilePaths {
-    <<abstract>>
     - _files: list
-    + get_files(self) -> list
+    - _instance: FilePaths
+    + files(self): list
+    + instance(cls): FilePaths
   }
 
   class DataAccess {
     + ctrl: Ctrl
     + data: Data
-    + pathLoss: PathLoss
     + rxPacketTrace: RxPacketTrace
+    + pathLoss: dict
     + pdcp: dict
     + rlc: dict
     + __init__(self, files: list)
@@ -282,14 +282,12 @@ classDiagram
   }
 
   class E2EBytes {
-    <<abstract>>
     + txBytes: Series
     + rxBytes: Series
     + __init__(self, filename: str)
   }
 
   class NrLayer {
-    <<abstract>>
     + packetSize: Series
     + delay: Series
     + __init__(self, filename: str)
