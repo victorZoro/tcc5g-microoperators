@@ -24,43 +24,63 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
 
 <table align="center">
     <thead>
-        <th colspan="4">Dados para cada arquivo</th>
+        <th colspan="5">Dados para cada arquivo</th>
         <tr>
             <th>Dado</th>
             <th>Unidade</th>
-            <th colspan="2">Arquivos</th>
+            <th colspan="3">Arquivos</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>SINR</td>
-            <td>dB</td>
-            <td colspan="2">
-                <p>DlCtrlSinr</p>
-                <p>DlDataSinr</p>
-                <p>RxPacketTrace</p>
-            </td>
+        <tr rowspan="2">
+            <td rowspan="2">SINR</td>
+            <td rowspan="2">dB</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <p>DlCtrlSinr</p>
+                    <p>DlDataSinr</p>
+                    <p>RxPacketTrace</p>
+                </td>
+            </tr>
         </tr>
-        <tr>
-            <td>pathLoss</td>
-            <td>dB</td>
-            <td colspan="2">
-                <p>UlPathlossTrace</p>
-                <p>DlPathlossTrace</p>
-            </td>
+        <tr rowspan="2">
+            <td rowspan="2">SINR</td>
+            <td rowspan="2">dB</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <p>UlPathlossTrace</p>
+                    <p>DlPathlossTrace</p>
+                </td>
+            </tr>
         </tr>
-        <tr>
-            <td>time</td>
-            <td>seconds</td>
-            <td colspan="2">
-                <p class="bold">*</p>
-            </td>
+        <tr rowspan="2">
+            <td rowspan="2">time</td>
+            <td rowspan="2">seconds</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>*</td>
+                <td>*</td>
+                <td>*</td>
+            </tr>
         </tr>
         <tr rowspan="2">
             <td rowspan="2">packetSize</td>
             <td rowspan="2">bytes</td>
             <td class="bold">PDCP</th>
             <td class="bold">RLC</th>
+            <td class="bold">Others</th>
             <tr>
                 <td>
                     <p>NrDlPdcpRxStats</p>
@@ -74,38 +94,109 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
                     <p>NrUlRlcRxStats</p>
                     <p>NrUlRlcTxStats</p>
                 </td>
+                <td>-</td>
+            </tr>
+        </tr>
+        <tr rowspan="2">
+            <td rowspan="2">delay</td>
+            <td rowspan="2">seconds</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>
+                    <p>NrDlPdcpStatsE2E</p>
+                    <p>NrDlPdcpRxStats</p>
+                    <p>NrUlPdcpStatsE2E</p>
+                    <p>NrUlPdcpRxStats</p>
+                </td>
+                <td>
+                    <p>NrDlRlcStatsE2E</p>
+                    <p>NrDlRxRlcStats</p>
+                    <p>NrUlRlcStatsE2E</p>
+                    <p>NrUlRlcRxStats</p>
+                </td>
+                <td>-</td>
+            </tr>
+        </tr>
+        <tr rowspan="2">
+            <td rowspan="2">TxBytes</td>
+            <td rowspan="2">bytes</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>
+                    <p>NrDlPdcpStatsE2E</p>
+                    <p>NrUlPdcpStatsE2E</p>
+                </td>
+                <td>
+                    <p>NrDlRlcStatsE2E</p>
+                    <p>NrUlRlcRxStats</p>
+                </td>
+                <td>-</td>
+            </tr>
+        </tr>
+        <tr rowspan="2">
+            <td rowspan="2">RxBytes</td>
+            <td rowspan="2">bytes</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>
+                    <p>NrDlPdcpStatsE2E</p>
+                    <p>NrUlPdcpStatsE2E</p>
+                </td>
+                <td>
+                    <p>NrDlRlcStatsE2E</p>
+                    <p>NrUlRlcRxStats</p>
+                </td>
+                <td>-</td>
+            </tr>
+        </tr>
+        <tr rowspan="2">
+            <td rowspan="2">direction</td>
+            <td rowspan="2">UL/DL</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>RxPacketTrace</td>
+            </tr>
+        </tr>
+        <tr rowspan="2">
+            <td rowspan="2">CQI</td>
+            <td rowspan="2">?</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>RxPacketTrace</td>
+            </tr>
+        </tr>
+        <tr rowspan="2">
+            <td rowspan="2">corrupt</td>
+            <td rowspan="2">?</td>
+            <td class="bold">PDCP</th>
+            <td class="bold">RLC</th>
+            <td class="bold">Others</th>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>RxPacketTrace</td>
             </tr>
         </tr>
     </tbody>
 </table>
 
-<!-- <table align="center">
-    <tr>
-        <th colspan="3">Dados para cada arquivo</th>
-    </tr>
-    <tr class="header">
-        <td>Dado</td>
-        <td>Unidade</td>
-        <td>Arquivos</td>
-    </tr>
-    <tr>
-        <td>SINR</td>
-        <td>dB</td>
-        <td>DlCtrlSinr; DlDataSinr; RxPacketTrace</td>
-    </tr>
-    <tr>
-        <td>pathloss</td>
-        <td>dB</td>
-        <td>UlPathlossTrace; DlPathlossTrace</td>
-    </tr>
-    <tr>
-        <td>time</td>
-        <td>seconds</td>
-        <td>*</td>
-    </tr>
-        <tr>
-        <td>packetSize</td>
-        <td>bytes</td>
-        <td>NrDlPdcpRxStats; NrDlPdcpTxStats; NrUlPdcpRxStats; NrUlPdcpTxStats;</td>
-    </tr>
-</table> -->
+<div align="center">
+    <h4>Legenda:</h4>
+    <span><strong>-</strong> : não possui.</span>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <span><strong>*</strong> : todos possuem.</span>
+</div>
