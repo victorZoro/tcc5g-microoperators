@@ -225,7 +225,7 @@ title: Class diagram for 5G-LENA results.
 
 classDiagram
 
-  direction TB
+  direction LR
 
   note for Dataset "linkType stands for uplink ('UL') or downlink ('DL')."
   note for FilePaths "Singleton"
@@ -234,12 +234,12 @@ classDiagram
     # dataset: DataFrame
     + time: Series
     + linkType: str
-    + __init__(self, filename: str)
+    + __init__(self, filename: str, linkType: str)
   }
 
   class PathLoss {
     + pathLoss: Series
-    + __init__(self, filename: str)
+    + __init__(self, filename: str, linkType: str)
   }
 
   class SINR {
@@ -284,21 +284,21 @@ classDiagram
   class E2EBytes {
     + txBytes: Series
     + rxBytes: Series
-    + __init__(self, filename: str)
+    + __init__(self, filename: str, linkType: str)
   }
 
   class NrLayer {
     + packetSize: Series
     + delay: Series
-    + __init__(self, filename: str)
+    + __init__(self, filename: str, linkType: str)
   }
 
   class PDCP {
-    + __init__(self)
+    + __init__(self, filename: str, linkType: str)
   }
 
   class RLC {
-    + __init__(self)
+    + __init__(self, filename: str, linkType: str)
   }
 
   %% Inheritance
