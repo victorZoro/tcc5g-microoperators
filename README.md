@@ -3,8 +3,6 @@
     Curso Técnico Integrado em Informática
 </pre>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-
 # Monetização do 5G em Cenários Locais e Implementação de Microoperadoras
 
 **Equipe:** ANDRADE DA SILVA, A. L; STORCK, C. R. (orientador); SANTOS DA CRUZ, L. V.; MARIANO, V. G. R.
@@ -210,10 +208,10 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
 
 <div style="display: flex; width: 100%; justify-content: right; font-size: 18px">
     <a href="#" style="display:flex; align-items: center; margin: 50px 0;">
-        <span class="material-symbols-rounded">vertical_align_top</span>
-        <span>Retornar ao topo.</span>
+        <span>☝️ Retornar ao topo.</span>
     </a>
 </div>
+
 
 ## Diagrama de Classes
 
@@ -336,7 +334,6 @@ classDiagram
 
 <div style="display: flex; width: 100%; justify-content: right; font-size: 18px">
     <a href="#" style="display:flex; align-items: center; margin: 50px 0;">
-        <span class="material-symbols-rounded">vertical_align_top</span>
-        <span>Retornar ao topo.</span>
+        <span>☝️ Retornar ao topo.</span>
     </a>
 </div>
