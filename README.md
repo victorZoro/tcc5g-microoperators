@@ -88,14 +88,11 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
                 <td>
                     <p>NrDlPdcpRxStats</p>
                     <p>NrDlPdcpTxStats</p>
-                    <p>NrUlPdcpRxStats</p>
                     <p>NrUlPdcpTxStats</p>
                 </td>
                 <td>
                     <p>NrDlRlcRxStats</p>
                     <p>NrDlRlcTxStats</p>
-                    <p>NrUlRlcRxStats</p>
-                    <p>NrUlRlcTxStats</p>
                 </td>
                 <td>-</td>
             </tr>
@@ -111,13 +108,10 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
                     <p>NrDlPdcpStatsE2E</p>
                     <p>NrDlPdcpRxStats</p>
                     <p>NrUlPdcpStatsE2E</p>
-                    <p>NrUlPdcpRxStats</p>
                 </td>
                 <td>
                     <p>NrDlRlcStatsE2E</p>
                     <p>NrDlRxRlcStats</p>
-                    <p>NrUlRlcStatsE2E</p>
-                    <p>NrUlRlcRxStats</p>
                 </td>
                 <td>-</td>
             </tr>
@@ -135,7 +129,6 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
                 </td>
                 <td>
                     <p>NrDlRlcStatsE2E</p>
-                    <p>NrUlRlcRxStats</p>
                 </td>
                 <td>-</td>
             </tr>
@@ -153,7 +146,6 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
                 </td>
                 <td>
                     <p>NrDlRlcStatsE2E</p>
-                    <p>NrUlRlcStatsE2E</p>
                 </td>
                 <td>-</td>
             </tr>
@@ -298,7 +290,7 @@ classDiagram
   }
 
   class RLC {
-    + __init__(self, filename: str, linkType: str)
+    + __init__(self, filename: str)
   }
 
   %% Inheritance
