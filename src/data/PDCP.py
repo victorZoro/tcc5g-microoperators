@@ -1,8 +1,9 @@
-from NrLayer import NrLayer
+from src.data.NrLayer import NrLayer
+
 
 class PDCP(NrLayer):
-    def __init__(self, filePath, linkType):
-        '''
+    def __init__(self, file_path, link_type):
+        """
         Constructor of PDCP class. Receives the file path and sends it to the NrLayer (super class) constructor.
-        '''
-        super().__init__(filePath, linkType)
+        """
+        super().__init__(file_path, link_type)
