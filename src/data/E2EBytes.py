@@ -2,17 +2,16 @@ from src.data.Dataset import Dataset
 
 
 class E2EBytes(Dataset):
-    def __init__(self, file_path, link_type):
+    def __init__(self, file_path):
         """
         Constructor of the E2EBytes class. Receives the file path and the link type (ul or dl).
 
         Args:
             file_path (str): Path of the file.
-            link_type (str): Link type (ul or dl).
 
         Also initializes the txBytes and rxBytes attributes, which are both None by default for simplification purposes.
         """
-        super.__init__(self, file_path, link_type)
+        super().__init__(file_path)
         self.tx_bytes = None
         self.rx_bytes = None
 

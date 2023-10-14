@@ -11,5 +11,6 @@ class SINR(Dataset):
         The link type is downlink for every file that has SINR.
         """
 
-        super().__init__(file_path, 'dl')
+        super().__init__(file_path)
+        self.SINR = self.dataset['SINR(dB)']
         self.filePath = file_path

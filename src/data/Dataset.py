@@ -2,7 +2,7 @@ import pandas as pd
 
 
 class Dataset:
-    def __init__(self, file_path, link_type):
+    def __init__(self, file_path):
         """
         Constructor of Dataset class. Receives the file path and the link type (ul or dl).
 
@@ -13,4 +13,4 @@ class Dataset:
 
         self.filePath = file_path
         self.dataset = pd.read_csv(file_path, sep='\\t', engine='python')
-        self.link_type = link_type
+        self.time = None

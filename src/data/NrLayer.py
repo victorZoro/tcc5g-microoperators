@@ -2,18 +2,17 @@ from src.data.E2EBytes import E2EBytes
 
 
 class NrLayer(E2EBytes):
-    def __init__(self, file_path, link_type):
+    def __init__(self, file_path, delay=None):
         """
         Constructor of NrLayer class. Receives the file path and sends it to the E2EBytes (super class) constructor.
 
         Args:
             file_path (str): Path of the file.
-            link_type (str): Link type of the file.
 
         Also initializes the packetSize and delay attributes, which can be found in many simulation result files.
 
         Check the table under the README.md file for more information.
         """
-        super().__init__(file_path, link_type)
-        self.packetSize = self.Dataset.dataset['packetSize']
-        self.delay = self.Dataset.dataset['delay']
+        super().__init__(file_path)
+        self.packetSize = self.dataset['packetSize']
+        self.delay = delay

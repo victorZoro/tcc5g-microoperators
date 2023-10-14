@@ -11,7 +11,7 @@ class RxPacketTrace(SINR):
 
         Also initializes the direction, CQI and corrupt attributes, which can be found in the simulation result file RxPacketTrace.
         """
-        super.__init__(file_path, None)
+        super().__init__(file_path)
         self.direction = self.dataset['direction']
         self.CQI = self.dataset['CQI']
         self.corrupt = self.dataset['corrupt']

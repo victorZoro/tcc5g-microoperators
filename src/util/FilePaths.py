@@ -25,30 +25,6 @@ class FilePaths:
         self.root = self.get_project_root()
 
         self._files = {}
-        # self.sim_tests = self.root / 'sim_tests'
-        # self.teste_NGMN = self.sim_tests / 'teste_NGMN'
-        # self.ctrl = self.teste_NGMN / 'CTRL'
-        # self.data = self.teste_NGMN / 'DATA'
-        # self.others = self.teste_NGMN / 'OTHERS'
-        # self.pdcp = self.teste_NGMN / 'PDCP'
-        # self.rlc = self.teste_NGMN / 'RLC'
-        #
-        # self._files = {
-        #     'DlCtrlSinr': self.ctrl / 'DlCtrlSinr.txt',
-        #     'DlDataSinr': self.data / 'DlDataSinr.txt',
-        #     'RxPacketTrace': self.others / 'RxPacketTrace.txt',
-        #     'DlPathlossTrace': self.others / 'DlPathlossTrace.txt',
-        #     'UlPathlossTrace': self.others / 'UlPathlossTrace.txt',
-        #     'NrDlPdcpRxStats': self.pdcp / 'NrDlPdcpRxStats.txt',
-        #     'NrDlPdcpTxStats': self.pdcp / 'NrDlPdcpTxStats.txt',
-        #     'NrUlPdcpTxStats': self.pdcp / 'NrUlPdcpTxStats.txt',
-        #     'NrDlPdcpStatsE2E': self.pdcp / 'NrDlPdcpStatsE2E.txt',
-        #     'NrUlPdcpStatsE2E': self.pdcp / 'NrUlPdcpStatsE2E.txt',
-        #     'NrDlRxRlcStats': self.rlc / 'NrDlRxRlcStats.txt',
-        #     'NrDlTxRlcStats': self.rlc / 'NrDlTxRlcStats.txt',
-        #     'NrDlRlcStatsE2E': self.rlc / 'NrDlRlcStatsE2E.txt',
-        #     'NrUlRlcStatsE2E': self.rlc / 'NrUlRlcStatsE2E.txt'
-        # }
 
     def add_file(self, file):
         """
@@ -92,6 +68,25 @@ class FilePaths:
 
     def get_project_root(self):
         return Path(git.Repo('.', search_parent_directories=True).working_tree_dir)
+
+    def get_file_names(self):
+        return [
+            'DlCtrlSinr',
+            'DlDataSinr',
+            'RxPacketTrace',
+            'DlPathlossTrace',
+            'UlPathlossTrace'
+            'RxPacketTrace',
+            'NrDlPdcpRxStats',
+            'NrDlPdcpTxStats',
+            'NrUlPdcpTxStats',
+            'NrDlPdcpStatsE2E',
+            'NrUlPdcpStatsE2E',
+            'NrDlRxRlcStats',
+            'NrDlTxRlcStats',
+            'NrDlRlcStatsE2E',
+            'NrUlRlcStatsE2E'
+        ]
 
     @property
     def files(self):

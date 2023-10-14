@@ -1,17 +1,20 @@
 from util import FilePaths
-from data import Dataset
-import DataAccess
-import pandas as pd
+from src.util import DataAccess
 
-test = FilePaths.FilePaths.instance()
+file_paths = FilePaths.FilePaths.instance()
 
-try:
-    print(test.search_file('DlCtrlSinr', 'txt'))
-except ValueError as e:
-    print(e)
-except TypeError as e:
-    print(e)
 
-# da = DataAccess.DataAccess(test.files)
+def load_files():
+    file_names = file_paths.get_file_names()
 
-# print(da.ctrl.dataset['Time'].head())
+    for file in file_names:
+        file_paths.add_file({file: file_paths.search_file(file, 'txt')})
+        print('Successful loading for file:', file)
+
+
+load_files()
+
+da = DataAccess.DataAccess(file_paths.files)
+
+print(da.pdcp.get('NrDlPdcpRxStats').dataset.head())
+
