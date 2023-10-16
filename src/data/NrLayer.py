@@ -1,7 +1,7 @@
-from src.data.E2EBytes import E2EBytes
+from src.data.Dataset import Dataset
 
 
-class NrLayer(E2EBytes):
+class NrLayer(Dataset):
     def __init__(self, file_path, delay=None):
         """
         Constructor of NrLayer class. Receives the file path and sends it to the E2EBytes (super class) constructor.
@@ -15,4 +15,6 @@ class NrLayer(E2EBytes):
         """
         super().__init__(file_path)
         self.packetSize = self.dataset['packetSize']
-        self.delay = delay
+        self.time = self.dataset['time(s)']
+        if delay:
+            self.delay = self.dataset[delay]

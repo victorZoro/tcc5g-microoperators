@@ -26,6 +26,8 @@ class FilePaths:
 
         self._files = {}
 
+        self.load_files()
+
     def add_file(self, file):
         """
         Updates the dict of file paths.
@@ -80,13 +82,16 @@ class FilePaths:
             'NrDlPdcpRxStats',
             'NrDlPdcpTxStats',
             'NrUlPdcpTxStats',
-            'NrDlPdcpStatsE2E',
-            'NrUlPdcpStatsE2E',
             'NrDlRxRlcStats',
             'NrDlTxRlcStats',
-            'NrDlRlcStatsE2E',
-            'NrUlRlcStatsE2E'
         ]
+
+    def load_files(self):
+        file_names = self.get_file_names()
+
+        for file in file_names:
+            self.add_file({file: self.search_file(file, 'txt')})
+            print('Successful loading for file:', file)
 
     @property
     def files(self):

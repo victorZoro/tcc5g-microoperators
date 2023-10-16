@@ -105,47 +105,10 @@ A tabela abaixo lista a maior parte das informações coletadas das simulações
             <th>Others</th>
             <tr>
                 <td>
-                    <p>NrDlPdcpStatsE2E</p>
                     <p>NrDlPdcpRxStats</p>
-                    <p>NrUlPdcpStatsE2E</p>
                 </td>
                 <td>
-                    <p>NrDlRlcStatsE2E</p>
                     <p>NrDlRxRlcStats</p>
-                </td>
-                <td>-</td>
-            </tr>
-        </tr>
-        <tr rowspan="2">
-            <td rowspan="2">TxBytes</td>
-            <td rowspan="2">bytes</td>
-            <th>PDCP</th>
-            <th>RLC</th>
-            <th>Others</th>
-            <tr>
-                <td>
-                    <p>NrDlPdcpStatsE2E</p>
-                    <p>NrUlPdcpStatsE2E</p>
-                </td>
-                <td>
-                    <p>NrDlRlcStatsE2E</p>
-                </td>
-                <td>-</td>
-            </tr>
-        </tr>
-        <tr rowspan="2">
-            <td rowspan="2">RxBytes</td>
-            <td rowspan="2">bytes</td>
-            <th>PDCP</th>
-            <th>RLC</th>
-            <th>Others</th>
-            <tr>
-                <td>
-                    <p>NrDlPdcpStatsE2E</p>
-                    <p>NrUlPdcpStatsE2E</p>
-                </td>
-                <td>
-                    <p>NrDlRlcStatsE2E</p>
                 </td>
                 <td>-</td>
             </tr>
@@ -219,19 +182,15 @@ classDiagram
 
   direction LR
 
-  note for Dataset "linkType stands for uplink ('UL') or downlink ('DL')."
-  note for FilePaths "Singleton"
-
   class Dataset {
     # dataset: DataFrame
     + time: Series
-    + linkType: str
-    + __init__(self, filename: str, linkType: str)
+    + __init__(self, filename: str)
   }
 
   class PathLoss {
     + pathLoss: Series
-    + __init__(self, filename: str, linkType: str)
+    + __init__(self, filename: str)
   }
 
   class SINR {
@@ -273,20 +232,14 @@ classDiagram
     + importAllRlc(self, files: list)
   }
 
-  class E2EBytes {
-    + txBytes: Series
-    + rxBytes: Series
-    + __init__(self, filename: str, linkType: str)
-  }
-
   class NrLayer {
     + packetSize: Series
     + delay: Series
-    + __init__(self, filename: str, linkType: str)
+    + __init__(self, filename: str)
   }
 
   class PDCP {
-    + __init__(self, filename: str, linkType: str)
+    + __init__(self, filename: str)
   }
 
   class RLC {
@@ -295,14 +248,13 @@ classDiagram
 
   %% Inheritance
   Dataset <|-- SINR
-  Dataset <|-- E2EBytes
   Dataset <|-- PathLoss
   SINR <|-- Ctrl
   SINR <|-- Data
   SINR <|-- RxPacketTrace
   NrLayer <|-- PDCP
   NrLayer <|-- RLC
-  E2EBytes <|-- NrLayer
+  Dataset <|-- NrLayer
 
   %% Aggregation
   Ctrl --o DataAccess
