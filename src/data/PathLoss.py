@@ -8,7 +8,6 @@ class Pathloss(Dataset):
 
         Args:
             file_path (str): Path of the file.
-            link_type (str): Link type (ul or dl).
 
         Also initializes the pathLoss attribute, which can be found in the simulation result files UlPathlossTrace
         and DlPathlossTrace.

@@ -14,7 +14,7 @@ class NrLayer(Dataset):
         Check the table under the README.md file for more information.
         """
         super().__init__(file_path)
-        self.packetSize = self.dataset['packetSize']
+        self.packet_size = self.dataset['packetSize']
         self.time = self.dataset['time(s)']
         if delay:
             self.delay = self.dataset[delay]

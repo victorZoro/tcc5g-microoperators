@@ -1,10 +1,6 @@
 import git
 from pathlib import Path
 import os
-import types
-
-from argon2._utils import NoneType
-
 """
 Class that contains all the file paths for the project.
 
@@ -24,21 +20,10 @@ class FilePaths:
 
         self.root = self.get_project_root()
 
-        self._files = {}
-
-        self.load_files()
-
-    def add_file(self, file):
-        """
-        Updates the dict of file paths.
-
-        Args:
-            files (dict): Dict of file paths.
-        """
-        if not isinstance(file, dict):
-            raise TypeError('File must be a dict.')
-
-        self._files.update(file)
+        self.directory_ue30 = self.root / 'results' / 'UDP-30-UE'
+        self.directory_ue60 = self.root / 'results' / 'UDP-60-UE'
+        self.directory_ue90 = self.root / 'results' / 'UDP-90-UE'
+        self.directory_ue120 = self.root / 'results' / 'UDP-120-UE'
 
     def search_file(self, file_name, extension, search_path=None):
         """
@@ -55,8 +40,6 @@ class FilePaths:
         if not isinstance(file_name, str) or not isinstance(extension, str):
             bad_argument = file_name if not isinstance(file_name, str) else extension
             raise TypeError('Argument', bad_argument, 'cannot be a', type(bad_argument), '. Must be a str.')
-        if not isinstance(search_path, (str, type(None))):
-            raise TypeError('Argument search_path cannot be a', type(search_path), '. Must be a str or None.')
         if not file_name or not extension:
             raise ValueError('Arguments cannot be empty.')
 
@@ -86,19 +69,15 @@ class FilePaths:
             'NrDlTxRlcStats',
         ]
 
-    def load_files(self):
+    def load_files(self, search_path):
         file_names = self.get_file_names()
+        files = {}
 
         for file in file_names:
-            self.add_file({file: self.search_file(file, 'txt')})
-            print('Successful loading for file:', file)
+            files.update({file: self.search_file(file, 'txt', search_path)})
+            print('Successful loading for file:', search_path, file)
 
-    @property
-    def files(self):
-        """
-        Getter for the dict of file paths.
-        """
-        return self._files
+        return files
 
     @classmethod
     def instance(cls):

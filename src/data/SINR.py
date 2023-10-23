@@ -13,4 +13,3 @@ class SINR(Dataset):
 
         super().__init__(file_path)
         self.SINR = self.dataset['SINR(dB)']
-        self.filePath = file_path

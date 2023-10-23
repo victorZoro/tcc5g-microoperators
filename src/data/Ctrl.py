@@ -10,3 +10,4 @@ class Ctrl(SINR):
             file_path (str): Path of the file.
         """
         super().__init__(file_path)
+        self.time = self.dataset['Time']

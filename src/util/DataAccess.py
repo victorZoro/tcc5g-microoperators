@@ -6,10 +6,10 @@ from src.data.PDCP import PDCP
 from src.data.RLC import RLC
 
 
-# from util import FilePaths as fp
-
 class DataAccess:
     def __init__(self, files):
+        self.UEs = None
+
         self.ctrl = Ctrl(files['DlCtrlSinr'])
 
         self.data = Data(files['DlDataSinr'])
@@ -29,7 +29,16 @@ class DataAccess:
             'DlPathlossTrace': Pathloss(files['DlPathlossTrace']),
         }
 
+        self.dataset = None
+
         print('[Dataset] [All files were loaded successfully]')
+
+    def get_overall_avg(self, data):
+        sum = 0
+        for value in data:
+            sum += value
+
+        return sum / len(data)
 
     def get_avg_by_second(self, data, time):
         time_stamps = self.get_time_stamps(time)
@@ -46,3 +55,6 @@ class DataAccess:
 
     def get_time_stamps(self, time):
         return list(set(time.astype(int)))
+
+    def get_throughput(self, data):
+        pass
