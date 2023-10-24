@@ -15,7 +15,7 @@ class Plotter:
         plt.ylabel(y_label)
         plt.title(title)
 
-    def plot(self, x, y, legend=None):
+    def plot(self, x, y, legend=None, marker_style=None):
         """
         Plots a graph.
 
@@ -23,12 +23,15 @@ class Plotter:
             x (list): List of x values.
             y (list): List of y values.
             legend (list): List of legends.
+            marker_style (str): Marker style.
         """
-
-        index = 0
-        for i, j in zip(x, y):
-            plt.plot(i, j, linestyle=self.line_styles[index], marker=self.markers[index])
-            index += 1
+        if isinstance(x[0], list) or isinstance(y[0], list):
+            index = 0
+            for i, j in zip(x, y):
+                plt.plot(i, j, linestyle=self.line_styles[index], marker=marker_style)
+                index += 1
+        else:
+            plt.plot(x, y, marker=marker_style)
 
         if legend:
             plt.legend(legend)

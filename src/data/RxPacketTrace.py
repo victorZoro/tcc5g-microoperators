@@ -18,3 +18,4 @@ class RxPacketTrace(SINR):
         self.CQI = self.dataset['CQI']
         self.corrupt = self.dataset['corrupt']
         self.time = self.dataset['Time']
+        self.tb_size = self.dataset['tbSize']

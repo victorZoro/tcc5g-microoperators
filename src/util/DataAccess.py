@@ -29,19 +29,13 @@ class DataAccess:
             'DlPathlossTrace': Pathloss(files['DlPathlossTrace']),
         }
 
-        self.dataset = None
+        # self.dataset = None
 
         print('[Dataset] [All files were loaded successfully]')
 
-    def get_overall_avg(self, data):
-        sum = 0
-        for value in data:
-            sum += value
-
-        return sum / len(data)
-
-    def get_avg_by_second(self, data, time):
-        time_stamps = self.get_time_stamps(time)
+    @staticmethod
+    def get_avg_by_second(data, time):
+        time_stamps = DataAccess.get_time_stamps(time)
         average = []
         sum = 0
 
@@ -53,8 +47,20 @@ class DataAccess:
 
         return average
 
-    def get_time_stamps(self, time):
+    @staticmethod
+    def get_time_stamps(time):
         return list(set(time.astype(int)))
 
-    def get_throughput(self, data):
-        pass
+    @staticmethod
+    def get_throughput(data, time):
+        time_stamps = DataAccess.get_time_stamps(time)
+        throughput = []
+        sum = 0
+
+        for index, (previous_time, current_time, value) in enumerate(zip(time_stamps, time_stamps[1:], data)):
+            sum += data[index]
+            if previous_time != current_time:
+                throughput.append(8 * sum + 1024 ** 2)
+                sum = 0
+
+        return throughput
