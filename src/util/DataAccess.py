@@ -8,6 +8,12 @@ from src.data.RLC import RLC
 
 class DataAccess:
     def __init__(self, files):
+        """
+        Constructor for DataAcess class.
+
+        Args:
+            files (list): directories for the files.
+        """
         self.UEs = None
 
         self.ctrl = Ctrl(files['DlCtrlSinr'])
@@ -35,6 +41,16 @@ class DataAccess:
 
     @staticmethod
     def get_avg_by_second(data, time):
+        """
+        Gets the average of the data by second.
+
+        Args:
+            data (list / pandas.Series): list of data.
+            time (list / pandas.Series): list of timestamps.
+
+        Returns:
+            list: list of averages per second.
+        """
         time_stamps = DataAccess.get_time_stamps(time)
         average = []
         sum = 0
@@ -49,10 +65,31 @@ class DataAccess:
 
     @staticmethod
     def get_time_stamps(time):
+        """
+        Gets the timestamps in seconds only.
+
+        Args:
+            time (list): list of timestamps.
+
+        Returns:
+            list (int): list of timestamps in seconds.
+        """
         return list(set(time.astype(int)))
 
     @staticmethod
     def get_throughput(data, time):
+        """
+        Gets the throughput in MBps.
+        
+        Necessary because the throughput has a formula to be calculated. 
+
+        Args:
+            data (list): list of data.
+            time (list): list of timestamps.
+
+        Returns:
+            list: list of throughput per second.
+        """
         time_stamps = DataAccess.get_time_stamps(time)
         throughput = []
         sum = 0
@@ -60,7 +97,7 @@ class DataAccess:
         for index, (previous_time, current_time, value) in enumerate(zip(time_stamps, time_stamps[1:], data)):
             sum += data[index]
             if previous_time != current_time:
-                throughput.append(8 * sum + 1024 ** 2)
+                throughput.append(sum + 1024 ** 2)
                 sum = 0
 
         return throughput
