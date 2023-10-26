@@ -1,30 +1,37 @@
 import git
 from pathlib import Path
 import os
-"""
-Class that contains all the file paths for the project.
 
-Follows the Singleton pattern.
-"""
+from src.exceptions.EmptyValueError import EmptyValueError
 
 
 class FilePaths:
     _instance = None
 
     def __init__(self):
-        """
-        Constructor of FilePaths class. Initializes the dict of file paths and adds the files to the dict.
-
-        The keys are the filename while the values are the file paths.
-        """
-
         self.root = self.get_project_root()
 
-        self.directory_ue30 = self.root / 'results' / 'UDP-30-UE'
-        self.directory_ue60 = self.root / 'results' / 'UDP-60-UE'
-        self.directory_ue90 = self.root / 'results' / 'UDP-90-UE'
-        self.directory_ue120 = self.root / 'results' / 'UDP-120-UE'
         self.directory_tests = self.root / 'sim_tests'
+        self.directory_results = self.root / 'results'
+
+        self.directory_ue30 = self.directory_results / 'UDP-30-UE'
+        self.directory_ue60 = self.directory_results / 'UDP-60-UE'
+        self.directory_ue90 = self.directory_results / 'UDP-90-UE'
+        self.directory_ue120 = self.directory_results / 'UDP-120-UE'
+
+        self.directory_tcp_tdd = self.root / 'sim_tests' / 'testes' / 'TCP-5S TDD'
+        self.directory_udp_tdd = self.root / 'sim_tests' / 'testes' / 'UDP-5S TDD'
+
+        self.directory_dataset = self.directory_results / 'DATASET-BY-SOUSA'
+
+    @classmethod
+    def instance(cls):
+        if cls._instance is None:
+            cls._instance = FilePaths()
+        return cls._instance
+
+    def get_project_root(self):
+        return Path(git.Repo('.', search_parent_directories=True).working_tree_dir)
 
     def search_file(self, file_name, extension, search_path=None):
         """
@@ -38,11 +45,6 @@ class FilePaths:
         Returns:
             str: File path.
         """
-        if not isinstance(file_name, str) or not isinstance(extension, str):
-            bad_argument = file_name if not isinstance(file_name, str) else extension
-            raise TypeError('Argument', bad_argument, 'cannot be a', type(bad_argument), '. Must be a str.')
-        if not file_name or not extension:
-            raise ValueError('Arguments cannot be empty.')
 
         if search_path is None or not search_path:
             search_path = self.root
@@ -52,39 +54,25 @@ class FilePaths:
                 if file == file_name + '.' + extension:
                     return os.path.join(root, file)
 
-    def get_project_root(self):
-        return Path(git.Repo('.', search_parent_directories=True).working_tree_dir)
-
     def get_file_names(self):
         return [
-            'DlCtrlSinr',
-            'DlDataSinr',
-            'RxPacketTrace',
-            'DlPathlossTrace',
-            'UlPathlossTrace'
             'RxPacketTrace',
             'NrDlPdcpRxStats',
-            'NrDlPdcpTxStats',
-            'NrUlPdcpTxStats',
             'NrDlRxRlcStats',
-            'NrDlTxRlcStats',
         ]
 
-    def load_files(self, search_path):
+    def load_files(self, search_path, file_extension='txt'):
+        try:
+            EmptyValueError.check_empty([file_extension])
+        except EmptyValueError as e:
+            print(e)
+            return
+
         file_names = self.get_file_names()
         files = {}
 
         for file in file_names:
-            files.update({file: self.search_file(file, 'txt', search_path)})
+            files.update({file: self.search_file(file, file_extension, search_path)})
             print('Successful loading for file:', search_path, file)
 
         return files
-
-    @classmethod
-    def instance(cls):
-        """
-        Singleton method that returns the instance of the class.
-        """
-        if cls._instance is None:
-            cls._instance = FilePaths()
-        return cls._instance

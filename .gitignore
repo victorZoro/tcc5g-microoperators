@@ -8,3 +8,15 @@ results/UDP-30-UE/Saida do terminal
 results/UDP-60-UE/sAIDA DO TERMINAL
 results/UDP-90-UE/saida do terminal
 *.zip
+*.csv
+sim_tests/testes/TCP-10s/Saída do terminal
+sim_tests/testes/TCP-30s/Saída do terminal
+sim_tests/testes/TCP-5S TDD/sAIDA DO TERMINAL
+sim_tests/testes/TCP-5s/Saída do terminal
+sim_tests/testes/UDP-10s/Saída do Terminal
+sim_tests/testes/UDP-30s/Saída do terminal
+sim_tests/testes/UDP-5S TDD/saida do terminal
+sim_tests/testes/UDP-5s/Saída do terminal
+sim_tests/testes/UDP-5S TDD/default
+sim_tests/testes/UDP-10s/LICENSE
+sim_tests/testes/TCP-5S TDD/default
