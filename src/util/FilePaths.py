@@ -24,6 +24,7 @@ class FilePaths:
         self.directory_ue60 = self.root / 'results' / 'UDP-60-UE'
         self.directory_ue90 = self.root / 'results' / 'UDP-90-UE'
         self.directory_ue120 = self.root / 'results' / 'UDP-120-UE'
+        self.directory_tests = self.root / 'sim_tests'
 
     def search_file(self, file_name, extension, search_path=None):
         """

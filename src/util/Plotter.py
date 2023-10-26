@@ -1,3 +1,5 @@
+import locale
+
 from matplotlib import pyplot as plt
 from matplotlib import lines
 
@@ -20,10 +22,12 @@ class Plotter:
             y_label (str): label for y axis.
             title (str): title for graph.
         """
-        plt.figure(figsize=(3, 4))
+        plt.figure(figsize=(8, 7))
         plt.xlabel(x_label)
         plt.ylabel(y_label)
         plt.title(title)
+        plt.ticklabel_format(style='plain')
+        locale.setlocale(locale.LC_NUMERIC, "pt_BR")
 
     def plot(self, x, y, legend=None, marker_style=None):
         """
@@ -77,8 +81,7 @@ class Plotter:
             save_path (str): path to save the graph.
         """
         plt.savefig(save_path)
-        
-    
+
     def seek_for_wrong_type(self, data):
         """
         Checks if the data is of the same type. If not, raises a TypeError.
@@ -106,12 +109,21 @@ class Plotter:
 
         if isinstance(data, list):
             self.seek_for_wrong_type(data)
-            for value in data:
-                time.append(DataAccess.get_time_stamps(value.time)[:-1])
-                throughput.append(DataAccess.get_throughput(value.packet_size, value.time))
+            try:
+                for value in data:
+                    time.append(DataAccess.get_time_stamps(value.time)[:-1])
+                    throughput.append(DataAccess.get_throughput(value.packet_size, value.time))
+            except AttributeError:
+                for value in data:
+                    time.append(DataAccess.get_time_stamps(value.time)[:-1])
+                    throughput.append(DataAccess.get_throughput(value.tb_size, value.time))
         else:
-            time.append(DataAccess.get_time_stamps(data.time)[:-1])
-            throughput.append(DataAccess.get_throughput(data.packet_size, data.time))
+            try:
+                time.append(DataAccess.get_time_stamps(data.time)[:-1])
+                throughput.append(DataAccess.get_throughput(data.packet_size, data.time))
+            except AttributeError:
+                time.append(DataAccess.get_time_stamps(data.time)[:-1])
+                throughput.append(DataAccess.get_throughput(data.tb_size, data.time))
 
         self.create_graph('Tempo (s)', 'Throughput (MBps)', 'Throughput vs Tempo')
         self.plot(time, throughput, legend)
@@ -129,7 +141,7 @@ class Plotter:
         """
         time = []
         average = []
-        
+
         if isinstance(data, list):
             self.seek_for_wrong_type(data)
             for value in data:
@@ -138,7 +150,7 @@ class Plotter:
         else:
             time.append(DataAccess.get_time_stamps(value.time)[:-1])
             average.append(DataAccess.get_avg_by_second(value.average, value.time))
-            
+
         self.create_graph('Tempo (s)', y_label, title)
         self.plot(time, average, legend)
         self.show()

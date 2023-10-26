@@ -97,7 +97,7 @@ class DataAccess:
         for index, (previous_time, current_time, value) in enumerate(zip(time_stamps, time_stamps[1:], data)):
             sum += data[index]
             if previous_time != current_time:
-                throughput.append(sum + 1024 ** 2)
+                throughput.append(8 * (sum / current_time) * (1024 ** 2) / 1e6)
                 sum = 0
 
         return throughput
