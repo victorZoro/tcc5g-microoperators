@@ -20,3 +20,4 @@ sim_tests/testes/UDP-5s/Saída do terminal
 sim_tests/testes/UDP-5S TDD/default
 sim_tests/testes/UDP-10s/LICENSE
 sim_tests/testes/TCP-5S TDD/default
+*.xml

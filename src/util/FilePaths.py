@@ -59,11 +59,12 @@ class FilePaths:
             'RxPacketTrace',
             'NrDlPdcpRxStats',
             'NrDlRxRlcStats',
+            'flowmonitor',
         ]
 
     def load_files(self, search_path, file_extension='txt'):
         try:
-            EmptyValueError.check_empty([file_extension])
+            EmptyValueError.check_for_empty_value([file_extension])
         except EmptyValueError as e:
             print(e)
             return

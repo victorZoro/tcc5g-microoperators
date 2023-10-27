@@ -13,7 +13,7 @@ class PlotProcessor:
     @staticmethod
     def plot_throughput(data, legend):
         try:
-            NotAListError.isList(data)
+            NotAListError.is_list(data)
         except NotAListError as e:
             print('NotAListError found:', e)
 

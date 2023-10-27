@@ -1,5 +1,5 @@
 class NotAListError(Exception):
     @staticmethod
-    def isList(variable):
-        if not isinstance(variable, list):
+    def is_list(value):
+        if not isinstance(value, list):
             raise NotAListError('Value must be a list.')
