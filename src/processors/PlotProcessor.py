@@ -24,8 +24,12 @@ class PlotProcessor:
         throughput = []
 
         for value in data:
-            time.append(DataProcessor.get_time_stamps(value['time'])[:-1])
+            time.append(PlotProcessor.convert_time_to_set(DataProcessor.get_time_stamps(value['time'])))
             throughput.append(DataProcessor.get_throughput(list(value['packetSize']), value['time']))
 
         plot_maker.plot(time, throughput, legend)
         plot_maker.show()
+
+    @staticmethod
+    def convert_time_to_set(time):
+        return list(set(time))[:-1]
