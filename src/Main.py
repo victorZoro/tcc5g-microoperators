@@ -119,6 +119,18 @@ class Main:
     def plot_delays(self):
         PlotProcessor.plot_delay(
             [
+                self.simulated_tcp[30].dataset['pdcp'],
+                self.simulated_tcp[60].dataset['pdcp'],
+                self.simulated_tcp[90].dataset['pdcp'],
+                self.simulated_tcp[120].dataset['pdcp']
+            ],
+            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
+            'Delay x Tempo (TCP - Camada PDCP)',
+            './plots/pdcp_delay_tempo_tcp.png'
+        )
+
+        PlotProcessor.plot_delay(
+            [
                 self.simulated_udp[30].dataset['pdcp'],
                 self.simulated_udp[60].dataset['pdcp'],
                 self.simulated_udp[90].dataset['pdcp'],
@@ -127,6 +139,18 @@ class Main:
             ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
             'Delay x Tempo (UDP - Camada PDCP)',
             './plots/pdcp_delay_tempo_udp.png'
+        )
+
+        PlotProcessor.plot_delay(
+            [
+                self.simulated_tcp[30].dataset['rlc'],
+                self.simulated_tcp[60].dataset['rlc'],
+                self.simulated_tcp[90].dataset['rlc'],
+                self.simulated_tcp[120].dataset['rlc']
+            ],
+            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
+            'Delay x Tempo (TCP - Camada PDCP)',
+            './plots/rlc_delay_tempo_tcp.png'
         )
 
         PlotProcessor.plot_delay(
@@ -141,16 +165,16 @@ class Main:
             './plots/rlc_delay_tempo_udp.png'
         )
 
-        PlotProcessor.plot_delay(
-            [
-                self.collected[2].dataset,
-                self.collected[4].dataset,
-                self.collected[7].dataset,
-                self.collected[9].dataset
-            ],
-            ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-            'Throughput x Tempo (Dataset por SOUSA et al. (2023))'
-        )
+        # PlotProcessor.plot_delay(
+        #     [
+        #         self.collected[2].dataset,
+        #         self.collected[4].dataset,
+        #         self.collected[7].dataset,
+        #         self.collected[9].dataset
+        #     ],
+        #     ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
+        #     'Throughput x Tempo (Dataset por SOUSA et al. (2023))'
+        # )
 
 if __name__ == '__main__':
     main = Main()
