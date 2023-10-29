@@ -1,0 +1,558 @@
+  Traffic configuration selected is: NGMN MIXED
+  GNB num: 3
+  UE num: 30
+
+ ueSector1NetDev:1
+
+ Each sector has:
+1 UEs with NGMN FTP traffic
+2 UEs with NGMN HTTP traffic
+2 UEs with NGMN VIDEO traffic
+3 UEs with NGMN VOIP traffic
+2 UEs with NGMN GAMING traffic
+PING 7.0.0.2 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.12 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.22 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.5 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.6 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.15 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.16 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.25 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.26 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.10 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.11 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.20 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.21 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.30 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.31 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.7 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.8 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.9 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.17 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.18 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.19 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.27 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.28 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.29 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.3 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.4 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.13 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.14 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.23 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+PING 7.0.0.24 - 56 bytes of data; 84 bytes including ICMP and IPv4 headers.
+64 bytes from 7.0.0.10: icmp_seq=0 ttl=63 time=10.564 ms
+64 bytes from 7.0.0.21: icmp_seq=0 ttl=63 time=10.564 ms
+64 bytes from 7.0.0.31: icmp_seq=0 ttl=63 time=10.564 ms
+64 bytes from 7.0.0.20: icmp_seq=0 ttl=63 time=11.028 ms
+64 bytes from 7.0.0.11: icmp_seq=0 ttl=63 time=11.028 ms
+64 bytes from 7.0.0.30: icmp_seq=0 ttl=63 time=11.028 ms
+64 bytes from 7.0.0.9: icmp_seq=0 ttl=63 time=11.064 ms
+64 bytes from 7.0.0.29: icmp_seq=0 ttl=63 time=11.064 ms
+64 bytes from 7.0.0.19: icmp_seq=0 ttl=63 time=11.064 ms
+64 bytes from 7.0.0.8: icmp_seq=0 ttl=63 time=11.35 ms
+64 bytes from 7.0.0.18: icmp_seq=0 ttl=63 time=11.35 ms
+64 bytes from 7.0.0.28: icmp_seq=0 ttl=63 time=11.385 ms
+64 bytes from 7.0.0.7: icmp_seq=0 ttl=63 time=11.386 ms
+64 bytes from 7.0.0.17: icmp_seq=0 ttl=63 time=11.386 ms
+64 bytes from 7.0.0.27: icmp_seq=0 ttl=63 time=11.421 ms
+64 bytes from 7.0.0.16: icmp_seq=0 ttl=63 time=11.421 ms
+64 bytes from 7.0.0.6: icmp_seq=0 ttl=63 time=11.421 ms
+64 bytes from 7.0.0.26: icmp_seq=0 ttl=63 time=11.457 ms
+64 bytes from 7.0.0.5: icmp_seq=0 ttl=63 time=11.457 ms
+64 bytes from 7.0.0.15: icmp_seq=0 ttl=63 time=11.457 ms
+64 bytes from 7.0.0.14: icmp_seq=0 ttl=63 time=11.493 ms
+64 bytes from 7.0.0.24: icmp_seq=0 ttl=63 time=11.493 ms
+64 bytes from 7.0.0.4: icmp_seq=0 ttl=63 time=11.493 ms
+64 bytes from 7.0.0.3: icmp_seq=0 ttl=63 time=11.528 ms
+64 bytes from 7.0.0.23: icmp_seq=0 ttl=63 time=11.528 ms
+64 bytes from 7.0.0.13: icmp_seq=0 ttl=63 time=11.528 ms
+64 bytes from 7.0.0.25: icmp_seq=0 ttl=63 time=12.028 ms
+64 bytes from 7.0.0.2: icmp_seq=0 ttl=63 time=12.028 ms
+64 bytes from 7.0.0.22: icmp_seq=0 ttl=63 time=12.064 ms
+64 bytes from 7.0.0.12: icmp_seq=0 ttl=63 time=12.064 ms
+
+--- 7.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 12/12/12/0 ms
+
+--- 7.0.0.12 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 12/12/12/0 ms
+
+--- 7.0.0.22 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 12/12/12/0 ms
+
+--- 7.0.0.5 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.6 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.15 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.16 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.25 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 12/12/12/0 ms
+
+--- 7.0.0.26 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.10 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 10/10/10/0 ms
+
+--- 7.0.0.11 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.20 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.21 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 10/10/10/0 ms
+
+--- 7.0.0.30 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.31 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 10/10/10/0 ms
+
+--- 7.0.0.7 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.8 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.9 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.17 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.18 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.19 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.27 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.28 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.29 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.3 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.4 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.13 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.14 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.23 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+
+--- 7.0.0.24 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 200ms
+rtt min/avg/max/mdev = 11/11/11/0 ms
+Flow 1 (7.0.0.3:49153 -> 1.0.0.2:80) proto TCP
+  Tx Packets: 70
+  Tx Bytes:   9838
+  TxOffered:  0.00065806 Mbps
+  Rx Packets: 69
+  Rx Bytes:   9782
+  Throughput: 0.000654314 Mbps
+  Mean delay:  5.75377 ms
+  Last packet delay: +4.35729ms
+  Mean jitter:  1.61683 ms
+Flow 2 (7.0.0.13:49153 -> 1.0.0.2:80) proto TCP
+  Tx Packets: 26
+  Tx Bytes:   4224
+  TxOffered:  0.000282542 Mbps
+  Rx Packets: 25
+  Rx Bytes:   4168
+  Throughput: 0.000278796 Mbps
+  Mean delay:  4.4295 ms
+  Last packet delay: +4.35729ms
+  Mean jitter:  0.189636 ms
+Flow 3 (7.0.0.23:49153 -> 1.0.0.2:80) proto TCP
+  Tx Packets: 158
+  Tx Bytes:   13892
+  TxOffered:  0.000929231 Mbps
+  Rx Packets: 157
+  Rx Bytes:   13836
+  Throughput: 0.000925485 Mbps
+  Mean delay:  4.42619 ms
+  Last packet delay: +4.35729ms
+  Mean jitter:  0.296829 ms
+Flow 4 (7.0.0.4:49153 -> 1.0.0.2:80) proto TCP
+  Tx Packets: 97
+  Tx Bytes:   8986
+  TxOffered:  0.00060107 Mbps
+  Rx Packets: 96
+  Rx Bytes:   8930
+  Throughput: 0.000597324 Mbps
+  Mean delay:  4.50312 ms
+  Last packet delay: +4.28587ms
+  Mean jitter:  0.298307 ms
+Flow 5 (7.0.0.14:49153 -> 1.0.0.2:80) proto TCP
+  Tx Packets: 121
+  Tx Bytes:   15832
+  TxOffered:  0.001059 Mbps
+  Rx Packets: 120
+  Rx Bytes:   15776
+  Throughput: 0.00105525 Mbps
+  Mean delay:  5.12195 ms
+  Last packet delay: +4.53611ms
+  Mean jitter:  1.27498 ms
+Flow 6 (7.0.0.24:49153 -> 1.0.0.2:80) proto TCP
+  Tx Packets: 480
+  Tx Bytes:   34044
+  TxOffered:  0.00227719 Mbps
+  Rx Packets: 479
+  Rx Bytes:   33988
+  Throughput: 0.00227344 Mbps
+  Mean delay:  4.45356 ms
+  Last packet delay: +4.32158ms
+  Mean jitter:  0.179253 ms
+Flow 7 (1.0.0.2:49153 -> 7.0.0.2:2000) proto UDP
+  Tx Packets: 1846
+  Tx Bytes:   2724696
+  TxOffered:  0.182254 Mbps
+  Rx Packets: 44
+  Rx Bytes:   64944
+  Throughput: 0.00434408 Mbps
+  Mean delay:  4.59675 ms
+  Last packet delay: +6.92143ms
+  Mean jitter:  0.114448 ms
+Flow 8 (1.0.0.2:49154 -> 7.0.0.12:2000) proto UDP
+  Tx Packets: 1089
+  Tx Bytes:   1607364
+  TxOffered:  0.107516 Mbps
+  Rx Packets: 28
+  Rx Bytes:   41328
+  Throughput: 0.00276441 Mbps
+  Mean delay:  4.2403 ms
+  Last packet delay: +6.17143ms
+  Mean jitter:  0.153061 ms
+Flow 9 (1.0.0.2:49155 -> 7.0.0.22:2000) proto UDP
+  Tx Packets: 2243
+  Tx Bytes:   3310668
+  TxOffered:  0.221449 Mbps
+  Rx Packets: 38
+  Rx Bytes:   56088
+  Throughput: 0.00375171 Mbps
+  Mean delay:  3.9838 ms
+  Last packet delay: +4.90287ms
+  Mean jitter:  0.11797 ms
+Flow 10 (1.0.0.2:49156 -> 7.0.0.5:4000) proto UDP
+  Tx Packets: 6720
+  Tx Bytes:   861675
+  TxOffered:  0.0576371 Mbps
+  Rx Packets: 6720
+  Rx Bytes:   861675
+  Throughput: 0.0576371 Mbps
+  Mean delay:  1.42462 ms
+  Last packet delay: +1.55128ms
+  Mean jitter:  0.131992 ms
+Flow 11 (1.0.0.2:49157 -> 7.0.0.6:4000) proto UDP
+  Tx Packets: 6730
+  Tx Bytes:   873653
+  TxOffered:  0.0584383 Mbps
+  Rx Packets: 6730
+  Rx Bytes:   873653
+  Throughput: 0.0584383 Mbps
+  Mean delay:  1.42683 ms
+  Last packet delay: +1.39702ms
+  Mean jitter:  0.132718 ms
+Flow 12 (1.0.0.2:49158 -> 7.0.0.15:4000) proto UDP
+  Tx Packets: 6752
+  Tx Bytes:   872352
+  TxOffered:  0.0583513 Mbps
+  Rx Packets: 6752
+  Rx Bytes:   872352
+  Throughput: 0.0583513 Mbps
+  Mean delay:  1.42984 ms
+  Last packet delay: +1.6687ms
+  Mean jitter:  0.135212 ms
+Flow 13 (1.0.0.2:49159 -> 7.0.0.16:4000) proto UDP
+  Tx Packets: 6737
+  Tx Bytes:   871247
+  TxOffered:  0.0582774 Mbps
+  Rx Packets: 6737
+  Rx Bytes:   871247
+  Throughput: 0.0582774 Mbps
+  Mean delay:  1.42647 ms
+  Last packet delay: +1.22496ms
+  Mean jitter:  0.134403 ms
+Flow 14 (1.0.0.2:49160 -> 7.0.0.25:4000) proto UDP
+  Tx Packets: 6761
+  Tx Bytes:   881499
+  TxOffered:  0.0589631 Mbps
+  Rx Packets: 6761
+  Rx Bytes:   881499
+  Throughput: 0.0589631 Mbps
+  Mean delay:  1.42128 ms
+  Last packet delay: +1.20009ms
+  Mean jitter:  0.12615 ms
+Flow 15 (1.0.0.2:49161 -> 7.0.0.26:4000) proto UDP
+  Tx Packets: 6728
+  Tx Bytes:   870851
+  TxOffered:  0.0582509 Mbps
+  Rx Packets: 6728
+  Rx Bytes:   870851
+  Throughput: 0.0582509 Mbps
+  Mean delay:  1.48072 ms
+  Last packet delay: +1.42646ms
+  Mean jitter:  0.233548 ms
+Flow 16 (1.0.0.2:49162 -> 7.0.0.7:5000) proto UDP
+  Tx Packets: 2622
+  Tx Bytes:   168871
+  TxOffered:  0.0112957 Mbps
+  Rx Packets: 2622
+  Rx Bytes:   168871
+  Throughput: 0.0112957 Mbps
+  Mean delay:  1.42621 ms
+  Last packet delay: +1.65548ms
+  Mean jitter:  0.218314 ms
+Flow 17 (1.0.0.2:49163 -> 7.0.0.8:5000) proto UDP
+  Tx Packets: 2439
+  Tx Bytes:   155527
+  TxOffered:  0.0104031 Mbps
+  Rx Packets: 2439
+  Rx Bytes:   155527
+  Throughput: 0.0104031 Mbps
+  Mean delay:  1.43028 ms
+  Last packet delay: +1.18822ms
+  Mean jitter:  0.214343 ms
+Flow 18 (1.0.0.2:49164 -> 7.0.0.9:5000) proto UDP
+  Tx Packets: 2750
+  Tx Bytes:   178200
+  TxOffered:  0.0119197 Mbps
+  Rx Packets: 2750
+  Rx Bytes:   178200
+  Throughput: 0.0119197 Mbps
+  Mean delay:  1.43716 ms
+  Last packet delay: +1.54075ms
+  Mean jitter:  0.22395 ms
+Flow 19 (1.0.0.2:49165 -> 7.0.0.17:5000) proto UDP
+  Tx Packets: 2745
+  Tx Bytes:   177835
+  TxOffered:  0.0118953 Mbps
+  Rx Packets: 2745
+  Rx Bytes:   177835
+  Throughput: 0.0118953 Mbps
+  Mean delay:  1.4525 ms
+  Last packet delay: +1.4178ms
+  Mean jitter:  0.222599 ms
+Flow 20 (1.0.0.2:49166 -> 7.0.0.18:5000) proto UDP
+  Tx Packets: 3092
+  Tx Bytes:   203131
+  TxOffered:  0.0135874 Mbps
+  Rx Packets: 3092
+  Rx Bytes:   203131
+  Throughput: 0.0135874 Mbps
+  Mean delay:  1.46793 ms
+  Last packet delay: +1.17198ms
+  Mean jitter:  0.230506 ms
+Flow 21 (1.0.0.2:49167 -> 7.0.0.19:5000) proto UDP
+  Tx Packets: 2499
+  Tx Bytes:   159882
+  TxOffered:  0.0106944 Mbps
+  Rx Packets: 2499
+  Rx Bytes:   159882
+  Throughput: 0.0106944 Mbps
+  Mean delay:  4.14622 ms
+  Last packet delay: +4.28601ms
+  Mean jitter:  0.224074 ms
+Flow 22 (1.0.0.2:49168 -> 7.0.0.27:5000) proto UDP
+  Tx Packets: 2489
+  Tx Bytes:   159152
+  TxOffered:  0.0106456 Mbps
+  Rx Packets: 2489
+  Rx Bytes:   159152
+  Throughput: 0.0106456 Mbps
+  Mean delay:  1.41278 ms
+  Last packet delay: +1.64725ms
+  Mean jitter:  0.210479 ms
+Flow 23 (1.0.0.2:49169 -> 7.0.0.28:5000) proto UDP
+  Tx Packets: 2255
+  Tx Bytes:   142115
+  TxOffered:  0.00950602 Mbps
+  Rx Packets: 2255
+  Rx Bytes:   142115
+  Throughput: 0.00950602 Mbps
+  Mean delay:  1.44614 ms
+  Last packet delay: +1.40949ms
+  Mean jitter:  0.20378 ms
+Flow 24 (1.0.0.2:49170 -> 7.0.0.29:5000) proto UDP
+  Tx Packets: 2102
+  Tx Bytes:   130961
+  TxOffered:  0.00875993 Mbps
+  Rx Packets: 2102
+  Rx Bytes:   130961
+  Throughput: 0.00875993 Mbps
+  Mean delay:  1.42609 ms
+  Last packet delay: +1.44517ms
+  Mean jitter:  0.196532 ms
+Flow 25 (1.0.0.2:49171 -> 7.0.0.20:5000) proto UDP
+  Tx Packets: 2487
+  Tx Bytes:   419709
+  TxOffered:  0.0280742 Mbps
+  Rx Packets: 2487
+  Rx Bytes:   419709
+  Throughput: 0.0280742 Mbps
+  Mean delay:  1.67922 ms
+  Last packet delay: +1.67143ms
+  Mean jitter:  0.0144321 ms
+Flow 26 (1.0.0.2:49172 -> 7.0.0.31:5000) proto UDP
+  Tx Packets: 2501
+  Tx Bytes:   419687
+  TxOffered:  0.0280727 Mbps
+  Rx Packets: 2501
+  Rx Bytes:   419687
+  Throughput: 0.0280727 Mbps
+  Mean delay:  1.67561 ms
+  Last packet delay: +1.67143ms
+  Mean jitter:  0.00761118 ms
+Flow 27 (1.0.0.2:49173 -> 7.0.0.21:5000) proto UDP
+  Tx Packets: 2497
+  Tx Bytes:   422640
+  TxOffered:  0.0282702 Mbps
+  Rx Packets: 2497
+  Rx Bytes:   422640
+  Throughput: 0.0282702 Mbps
+  Mean delay:  1.68155 ms
+  Last packet delay: +1.67143ms
+  Mean jitter:  0.0188225 ms
+Flow 28 (1.0.0.2:49174 -> 7.0.0.30:5000) proto UDP
+  Tx Packets: 2490
+  Tx Bytes:   419320
+  TxOffered:  0.0280482 Mbps
+  Rx Packets: 2490
+  Rx Bytes:   419320
+  Throughput: 0.0280482 Mbps
+  Mean delay:  1.94763 ms
+  Last packet delay: +1.74286ms
+  Mean jitter:  0.493029 ms
+Flow 29 (1.0.0.2:49175 -> 7.0.0.10:5000) proto UDP
+  Tx Packets: 2495
+  Tx Bytes:   417646
+  TxOffered:  0.0279362 Mbps
+  Rx Packets: 2495
+  Rx Bytes:   417646
+  Throughput: 0.0279362 Mbps
+  Mean delay:  4.46943 ms
+  Last packet delay: +4.52857ms
+  Mean jitter:  0.0336386 ms
+Flow 30 (1.0.0.2:49176 -> 7.0.0.11:5000) proto UDP
+  Tx Packets: 2484
+  Tx Bytes:   420620
+  TxOffered:  0.0281351 Mbps
+  Rx Packets: 2484
+  Rx Bytes:   420620
+  Throughput: 0.0281351 Mbps
+  Mean delay:  1.67547 ms
+  Last packet delay: +1.67143ms
+  Mean jitter:  0.00750512 ms
+Flow 31 (1.0.0.2:80 -> 7.0.0.4:49153) proto TCP
+  Tx Packets: 127
+  Tx Bytes:   181604
+  TxOffered:  0.0121474 Mbps
+  Rx Packets: 106
+  Rx Bytes:   149852
+  Throughput: 0.0100235 Mbps
+  Mean delay:  2.39478 ms
+  Last packet delay: +2.2138ms
+  Mean jitter:  0.197075 ms
+Flow 32 (1.0.0.2:80 -> 7.0.0.14:49153) proto TCP
+  Tx Packets: 174
+  Tx Bytes:   234065
+  TxOffered:  0.0156565 Mbps
+  Rx Packets: 144
+  Rx Bytes:   188995
+  Throughput: 0.0126418 Mbps
+  Mean delay:  2.85119 ms
+  Last packet delay: +1.96387ms
+  Mean jitter:  0.391107 ms
+Flow 33 (1.0.0.2:80 -> 7.0.0.24:49153) proto TCP
+  Tx Packets: 798
+  Tx Bytes:   1183311
+  TxOffered:  0.0791512 Mbps
+  Rx Packets: 768
+  Rx Bytes:   1137951
+  Throughput: 0.0761171 Mbps
+  Mean delay:  2.09045 ms
+  Last packet delay: +1.67776ms
+  Mean jitter:  0.0969498 ms
+Flow 34 (1.0.0.2:80 -> 7.0.0.23:49153) proto TCP
+  Tx Packets: 229
+  Tx Bytes:   331753
+  TxOffered:  0.0221908 Mbps
+  Rx Packets: 197
+  Rx Bytes:   283369
+  Throughput: 0.0189544 Mbps
+  Mean delay:  2.2429 ms
+  Last packet delay: +1.6064ms
+  Mean jitter:  0.180011 ms
+Flow 35 (1.0.0.2:80 -> 7.0.0.13:49153) proto TCP
+  Tx Packets: 35
+  Tx Bytes:   43042
+  TxOffered:  0.00287906 Mbps
+  Rx Packets: 27
+  Rx Bytes:   30946
+  Throughput: 0.00206997 Mbps
+  Mean delay:  1.84595 ms
+  Last packet delay: +1.64204ms
+  Mean jitter:  0.0767714 ms
+Flow 36 (1.0.0.2:80 -> 7.0.0.3:49153) proto TCP
+  Tx Packets: 91
+  Tx Bytes:   118182
+  TxOffered:  0.00790515 Mbps
+  Rx Packets: 81
+  Rx Bytes:   103062
+  Throughput: 0.00689378 Mbps
+  Mean delay:  2.45316 ms
+  Last packet delay: +4.64212ms
+  Mean jitter:  0.40653 ms
+
+
+  Mean flow throughput: 0.021125
+  Mean flow delay: 2.576982
+  Median flow delay: 1.845951
+

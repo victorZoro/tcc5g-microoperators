@@ -27,30 +27,34 @@ class DataProcessor:
         return time.astype(int)
 
     @staticmethod
+    def get_average(data):
+        return sum(data) / len(data)
+
+    @staticmethod
     def get_avg_by_second(data, time):
         time_stamps = DataProcessor.get_time_stamps(time)
         average = []
-        sum = 0
+        aux = []
 
-        for (previous_time, current_time, value) in zip(time_stamps, time_stamps[1:], data):
-            sum += value
-            if current_time != previous_time:
-                average.append(sum)
-                sum = 0
+        for (previous_time, current_Time, value) in zip(time_stamps, time_stamps[1:], data):
+            aux.append(value)
+            if current_Time != previous_time:
+                average.append(DataProcessor.get_average(aux))
+                aux = []
 
         return average
 
     @staticmethod
     def get_throughput(data, time):
         time_stamps = DataProcessor.get_time_stamps(time)
-        print(time_stamps)
         throughput = []
-        sum = 0
+        aux = []
 
-        for (previous_time, current_time, value) in zip(time_stamps, time_stamps[1:], data):
-            sum += value
-            if current_time != previous_time:
-                throughput.append(8 * sum / 1e6)
-                sum = 0
+        for (previous_time, current_Time, value) in zip(time_stamps, time_stamps[1:], data):
+            aux.append(value)
+            if current_Time != previous_time:
+                print(8 * DataProcessor.get_average(aux))
+                throughput.append(8 * DataProcessor.get_average(aux) * 4000 / 1e6)
+                aux = []
 
         return throughput

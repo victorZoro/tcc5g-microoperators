@@ -7,35 +7,42 @@ from src.util.FilePaths import FilePaths
 
 
 class Dataset:
-    def __init__(self, UEs=None, attackers=None):
+    def __init__(self, UEs=None, attackers=None, protocol=None):
         self.file_paths = FilePaths.instance()
 
         self.UEs = UEs
         self.attackers = attackers
+        self.protocol = protocol
+
+        if self.UEs and not self.protocol:
+            raise ValueError('Protocol must be specified.')
+
+        if self.attackers and self.UEs:
+            raise ValueError('Only one value can be specified.')
 
         self.dataset = None
 
         self.find_files()
 
         self.rename_time()
+        self.rename_delay()
         self.rename_packet_size()
 
     def find_files(self):
-        if self.attackers and self.UEs:
-            raise ValueError('Only one value can be specified.')
-
         if self.attackers:
             self.find_attacker_files()
             return
         else:
+            protocol_directory = self.file_paths.results_tcp if self.protocol == 'TCP' \
+                else self.file_paths.results_udp
+
             ue_directories = {
-                9: self.file_paths.directory_udp_tdd,
-                10: self.file_paths.directory_tcp_tdd,
-                30: self.file_paths.directory_ue30,
-                60: self.file_paths.directory_ue60,
-                90: self.file_paths.directory_ue90,
-                120: self.file_paths.directory_ue120
+                30: protocol_directory / self.file_paths.directory_ue30,
+                60: protocol_directory / self.file_paths.directory_ue60,
+                90: protocol_directory / self.file_paths.directory_ue90,
+                120: protocol_directory / self.file_paths.directory_ue120
             }
+
             self.find_ue_files(ue_directories)
             self.find_xml_files(ue_directories)
             return
@@ -87,17 +94,14 @@ class Dataset:
         try:
             etree = et.parse(files['flowmonitor'])
         except TypeError:
-            print('flowmonitor.xml is not available. Please review the simulation results.')
+            print('XML file not found. Please check simulation results')
             return
 
         root = etree.getroot()
 
         self.dataset.update({'flowMonitor': pd.DataFrame(DataProcessor.get_transformed_xml(root))})
 
-        pass
-
     def rename_time(self):
-
         if isinstance(self.dataset, dict):
             for key in self.dataset:
                 if 'time(s)' in self.dataset[key].columns:
@@ -118,3 +122,10 @@ class Dataset:
 
         if 'pktSizeBytes' in self.dataset.columns:
             self.dataset.rename(columns={'pktSizeBytes': 'packetSize'}, inplace=True)
+
+    def rename_delay(self):
+        if isinstance(self.dataset, dict):
+            for key in self.dataset:
+                if 'delay(s)' in self.dataset[key].columns:
+                    self.dataset[key].rename(columns={'delay(s)': 'delay'}, inplace=True)
+            return

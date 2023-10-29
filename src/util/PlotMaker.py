@@ -42,7 +42,7 @@ class PlotMaker:
         plt.show()
 
     def save(self, file_path):
-        plt.savefig(file_path, dpi=300, bbox_inches='tight')
+        plt.savefig(file_path, format='png', dpi='figure', bbox_inches='tight')
 
     @classmethod
     def instance(cls):

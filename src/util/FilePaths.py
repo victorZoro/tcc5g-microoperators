@@ -9,18 +9,20 @@ class FilePaths:
     _instance = None
 
     def __init__(self):
+        if FilePaths._instance is not None:
+            raise Exception('Singleton class, use FilePaths.instance()')
+
         self.root = self.get_project_root()
 
         self.directory_tests = self.root / 'sim_tests'
         self.directory_results = self.root / 'results'
+        self.results_tcp = self.directory_results / 'TCP'
+        self.results_udp = self.directory_results / 'UDP'
 
-        self.directory_ue30 = self.directory_results / 'UDP-30-UE'
-        self.directory_ue60 = self.directory_results / 'UDP-60-UE'
-        self.directory_ue90 = self.directory_results / 'UDP-90-UE'
-        self.directory_ue120 = self.directory_results / 'UDP-120-UE'
-
-        self.directory_tcp_tdd = self.root / 'sim_tests' / 'testes' / 'TCP-5S TDD'
-        self.directory_udp_tdd = self.root / 'sim_tests' / 'testes' / 'UDP-5S TDD'
+        self.directory_ue30 = '30 UE'
+        self.directory_ue60 = '60 UE'
+        self.directory_ue90 = '90 UE'
+        self.directory_ue120 = '120 UE'
 
         self.directory_dataset = self.directory_results / 'DATASET-BY-SOUSA'
 
