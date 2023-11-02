@@ -9,13 +9,13 @@ class PlotMaker:
     def __init__(self):
         self.markers = list(lines.lineMarkers.keys())
         self.line_styles = list(lines.lineStyles.keys())
-        self.figure = plt.figure(figsize=(8, 7))
 
-    def create_plot(self, x_label, y_label, title):
+    def create_plot(self, x_label, y_label, title, ticklabel_format='plain'):
+        plt.figure(figsize=(12, 6))
         plt.xlabel(x_label)
         plt.ylabel(y_label)
         plt.title(title)
-        plt.ticklabel_format(style='plain')
+        plt.ticklabel_format(style=ticklabel_format)
         locale.setlocale(locale.LC_NUMERIC, "pt_BR")
 
     def plot(self, x, y, legend=None, marker_style=None):

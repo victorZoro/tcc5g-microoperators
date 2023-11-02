@@ -72,11 +72,11 @@ class Dataset:
             'rxPacketTrace': pd.read_csv(files['RxPacketTrace'],
                                          sep='\\t', decimal='.', engine='python'),
 
-            'pdcp': pd.read_csv(files['NrDlPdcpRxStats'],
-                                sep='\\t', decimal='.', engine='python'),
+            'rx_pdcp': pd.read_csv(files['NrDlPdcpRxStats'],
+                                   sep='\\t', decimal='.', engine='python'),
 
-            'rlc': pd.read_csv(files['NrDlRxRlcStats'],
-                               sep='\\t', decimal='.', engine='python'),
+            'tx_pdcp': pd.read_csv(files['NrDlPdcpTxStats'],
+                                   sep='\\t', decimal='.', engine='python'),
         }
 
     def find_xml_files(self, ue_directories):

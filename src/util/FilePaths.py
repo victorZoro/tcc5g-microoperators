@@ -17,7 +17,6 @@ class FilePaths:
         self.directory_tests = self.root / 'sim_tests'
         self.directory_results = self.root / 'results'
         self.results_tcp = self.directory_results / 'TCP'
-        self.results_udp = self.directory_results / 'UDP'
 
         self.directory_ue30 = '30 UE'
         self.directory_ue60 = '60 UE'
@@ -60,7 +59,7 @@ class FilePaths:
         return [
             'RxPacketTrace',
             'NrDlPdcpRxStats',
-            'NrDlRxRlcStats',
+            'NrDlPdcpTxStats',
             'flowmonitor',
         ]
 

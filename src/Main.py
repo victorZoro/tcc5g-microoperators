@@ -11,13 +11,6 @@ class Main:
             120: Dataset(UEs=120, protocol='TCP'),
         }
 
-        self.simulated_udp = {
-            30: Dataset(UEs=30, protocol='UDP'),
-            60: Dataset(UEs=60, protocol='UDP'),
-            90: Dataset(UEs=90, protocol='UDP'),
-            120: Dataset(UEs=120, protocol='UDP'),
-        }
-
         self.collected = {
             2: Dataset(attackers='2'),
             4: Dataset(attackers='4'),
@@ -26,8 +19,9 @@ class Main:
         }
 
     def main(self):
-        # self.plot_throughputs()
+        self.plot_throughputs()
         self.plot_delays()
+        self.plot_jitters()
 
     def plot_throughputs(self):
         PlotProcessor.plot_throughput(
@@ -38,71 +32,9 @@ class Main:
                 self.simulated_tcp[120].dataset['rxPacketTrace']
             ],
             ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Throughput x Tempo (TCP - RxPacketTrace)',
-            './plots/rx_throughput_tempo_tcp.png'
-        )
-
-        PlotProcessor.plot_throughput(
-            [
-                self.simulated_udp[30].dataset['rxPacketTrace'],
-                self.simulated_udp[60].dataset['rxPacketTrace'],
-                self.simulated_udp[90].dataset['rxPacketTrace'],
-                self.simulated_udp[120].dataset['rxPacketTrace']
-            ],
-            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Throughput x Tempo (UDP - RxPacketTrace)',
-            './plots/rx_throughput_tempo_tcp.png'
-
-        )
-
-        PlotProcessor.plot_throughput(
-            [
-                self.simulated_tcp[30].dataset['pdcp'],
-                self.simulated_tcp[60].dataset['pdcp'],
-                self.simulated_tcp[90].dataset['pdcp'],
-                self.simulated_tcp[120].dataset['pdcp']
-            ],
-            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Throughput x Tempo (TCP - Camada PDCP)',
-            './plots/pdcp_throughput_tempo_tcp.png'
-        )
-
-        PlotProcessor.plot_throughput(
-            [
-                self.simulated_udp[30].dataset['pdcp'],
-                self.simulated_udp[60].dataset['pdcp'],
-                self.simulated_udp[90].dataset['pdcp'],
-                self.simulated_udp[120].dataset['pdcp']
-            ],
-            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Throughput x Tempo (UDP - Camada PDCP)',
-            './plots/pdcp_throughput_tempo_tcp.png'
-
-        )
-
-        PlotProcessor.plot_throughput(
-            [
-                self.simulated_tcp[30].dataset['rlc'],
-                self.simulated_tcp[60].dataset['rlc'],
-                self.simulated_tcp[90].dataset['rlc'],
-                self.simulated_tcp[120].dataset['rlc']
-            ],
-            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Throughput x Tempo (TCP - Camada RLC)',
-            './plots/rlc_throughput_tempo_tcp.png'
-        )
-
-        PlotProcessor.plot_throughput(
-            [
-                self.simulated_udp[30].dataset['rlc'],
-                self.simulated_udp[60].dataset['rlc'],
-                self.simulated_udp[90].dataset['rlc'],
-                self.simulated_udp[120].dataset['rlc']
-            ],
-            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Throughput x Tempo (UDP - Camada RLC)',
-            './plots/rlc_throughput_tempo_tcp.png'
-
+            'Medidas de Vazão',
+            './plots/rx_throughput_tempo_tcp.png',
+            [30, 60, 90, 120]
         )
 
         PlotProcessor.plot_throughput(
@@ -113,68 +45,86 @@ class Main:
                 self.collected[9].dataset
             ],
             ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-            'Throughput x Tempo (Dataset por SOUSA et al. (2023))'
+            'Medidas de Vazão (Dataset por SOUSA et al. (2023))',
+            y_label='Vazão (Kbps)'
         )
 
     def plot_delays(self):
         PlotProcessor.plot_delay(
             [
-                self.simulated_tcp[30].dataset['pdcp'],
-                self.simulated_tcp[60].dataset['pdcp'],
-                self.simulated_tcp[90].dataset['pdcp'],
-                self.simulated_tcp[120].dataset['pdcp']
+                self.simulated_tcp[30].dataset['rx_pdcp'],
+                self.simulated_tcp[60].dataset['rx_pdcp'],
+                self.simulated_tcp[90].dataset['rx_pdcp'],
+                self.simulated_tcp[120].dataset['rx_pdcp']
             ],
             ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Delay x Tempo (TCP - Camada PDCP)',
+            'Medidas de Atraso',
             './plots/pdcp_delay_tempo_tcp.png'
         )
 
         PlotProcessor.plot_delay(
             [
-                self.simulated_udp[30].dataset['pdcp'],
-                self.simulated_udp[60].dataset['pdcp'],
-                self.simulated_udp[90].dataset['pdcp'],
-                self.simulated_udp[120].dataset['pdcp']
+                self.collected[2].dataset,
+                self.collected[4].dataset,
+                self.collected[7].dataset,
+                self.collected[9].dataset
             ],
-            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Delay x Tempo (UDP - Camada PDCP)',
-            './plots/pdcp_delay_tempo_udp.png'
+            ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
+            'Medidas de Atraso com Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            './plots/delay_tempo_dataset_attacked.png'
         )
 
         PlotProcessor.plot_delay(
             [
-                self.simulated_tcp[30].dataset['rlc'],
-                self.simulated_tcp[60].dataset['rlc'],
-                self.simulated_tcp[90].dataset['rlc'],
-                self.simulated_tcp[120].dataset['rlc']
+                self.collected[2].dataset,
+                self.collected[4].dataset,
+                self.collected[7].dataset,
+                self.collected[9].dataset
             ],
-            ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Delay x Tempo (TCP - Camada PDCP)',
-            './plots/rlc_delay_tempo_tcp.png'
+            ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
+            'Medidas de Atraso sem Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            './plots/delay_tempo_dataset_not_attacked.png',
+            is_attack=0
         )
 
-        PlotProcessor.plot_delay(
+    def plot_jitters(self):
+        PlotProcessor.plot_jitter(
             [
-                self.simulated_udp[30].dataset['rlc'],
-                self.simulated_udp[60].dataset['rlc'],
-                self.simulated_udp[90].dataset['rlc'],
-                self.simulated_udp[120].dataset['rlc']
+                self.simulated_tcp[30].dataset['rx_pdcp'],
+                self.simulated_tcp[60].dataset['rx_pdcp'],
+                self.simulated_tcp[90].dataset['rx_pdcp'],
+                self.simulated_tcp[120].dataset['rx_pdcp']
             ],
             ['30 UEs', '60 UEs', '90 UEs', '120 UEs'],
-            'Delay x Tempo (UDP - Camada PDCP)',
-            './plots/rlc_delay_tempo_udp.png'
+            'Medidas de $\it{Jitter}$',
+            './plots/pdcp_jitter_tempo_tcp.png'
         )
 
-        # PlotProcessor.plot_delay(
-        #     [
-        #         self.collected[2].dataset,
-        #         self.collected[4].dataset,
-        #         self.collected[7].dataset,
-        #         self.collected[9].dataset
-        #     ],
-        #     ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-        #     'Throughput x Tempo (Dataset por SOUSA et al. (2023))'
-        # )
+        PlotProcessor.plot_jitter(
+            [
+                self.collected[2].dataset,
+                self.collected[4].dataset,
+                self.collected[7].dataset,
+                self.collected[9].dataset
+            ],
+            ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
+            'Medidas de $\it{Jitter}$ com Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            './plots/jitter_tempo_dataset_attacked.png'
+        )
+
+        PlotProcessor.plot_jitter(
+            [
+                self.collected[2].dataset,
+                self.collected[4].dataset,
+                self.collected[7].dataset,
+                self.collected[9].dataset
+            ],
+            ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
+            'Medidas de $\it{Jitter}$ sem Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            './plots/jitter_tempo_dataset_not_attacked.png',
+            is_attack=0
+        )
+
 
 if __name__ == '__main__':
     main = Main()
