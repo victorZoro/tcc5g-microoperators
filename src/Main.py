@@ -1,5 +1,6 @@
 from src.data.Dataset import Dataset
 from src.processors.PlotProcessor import PlotProcessor
+from src.processors.DataProcessor import DataProcessor
 
 
 class Main:
@@ -22,6 +23,7 @@ class Main:
         self.plot_throughputs()
         self.plot_delays()
         self.plot_jitters()
+        self.plot_by_ue()
 
     def plot_throughputs(self):
         PlotProcessor.plot_throughput(
@@ -37,19 +39,8 @@ class Main:
             [30, 60, 90, 120]
         )
 
-        PlotProcessor.plot_throughput(
-            [
-                self.collected[2].dataset,
-                self.collected[4].dataset,
-                self.collected[7].dataset,
-                self.collected[9].dataset
-            ],
-            ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-            'Medidas de Vazão (Dataset por SOUSA et al. (2023))',
-            y_label='Vazão (Kbps)'
-        )
-
     def plot_delays(self):
+        # Simulation Scenarios
         PlotProcessor.plot_delay(
             [
                 self.simulated_tcp[30].dataset['rx_pdcp'],
@@ -62,6 +53,7 @@ class Main:
             './plots/pdcp_delay_tempo_tcp.png'
         )
 
+        # Dataset por SOUSA et al. (2023)
         PlotProcessor.plot_delay(
             [
                 self.collected[2].dataset,
@@ -88,6 +80,7 @@ class Main:
         )
 
     def plot_jitters(self):
+        # Simulation Scenarios
         PlotProcessor.plot_jitter(
             [
                 self.simulated_tcp[30].dataset['rx_pdcp'],
@@ -100,6 +93,7 @@ class Main:
             './plots/pdcp_jitter_tempo_tcp.png'
         )
 
+        # Dataset por SOUSA et al. (2023)
         PlotProcessor.plot_jitter(
             [
                 self.collected[2].dataset,
@@ -123,6 +117,93 @@ class Main:
             'Medidas de $\it{Jitter}$ sem Ataques à Rede (Dataset por SOUSA et al. (2023))',
             './plots/jitter_tempo_dataset_not_attacked.png',
             is_attack=0
+        )
+
+    def plot_by_ue(self):
+        # Simulation Scenarios
+        PlotProcessor.plot_by_ue(
+            [
+                DataProcessor.get_throughput(self.simulated_tcp[30].dataset['rxPacketTrace']['packetSize'],
+                                             self.simulated_tcp[30].dataset['rxPacketTrace']['time']),
+
+                DataProcessor.get_throughput(self.simulated_tcp[60].dataset['rxPacketTrace']['packetSize'],
+                                             self.simulated_tcp[60].dataset['rxPacketTrace']['time']),
+
+                DataProcessor.get_throughput(self.simulated_tcp[90].dataset['rxPacketTrace']['packetSize'],
+                                             self.simulated_tcp[90].dataset['rxPacketTrace']['time']),
+
+                DataProcessor.get_throughput(self.simulated_tcp[120].dataset['rxPacketTrace']['packetSize'],
+                                             self.simulated_tcp[120].dataset['rxPacketTrace']['time']),
+            ],
+            [30, 60, 90, 120],
+            'Usuários ativos',
+            'Vazão (MBPS)',
+            'Média de Vazão por Cenário',
+            './plots/throughput_usuarios_tcp.png'
+        )
+
+        PlotProcessor.plot_by_ue(
+            [
+                DataProcessor.get_avg_by_second(self.simulated_tcp[30].dataset['rx_pdcp']['delay'],
+                                                self.simulated_tcp[30].dataset['rx_pdcp']['time']),
+
+                DataProcessor.get_avg_by_second(self.simulated_tcp[60].dataset['rx_pdcp']['delay'],
+                                                self.simulated_tcp[60].dataset['rx_pdcp']['time']),
+
+                DataProcessor.get_avg_by_second(self.simulated_tcp[90].dataset['rx_pdcp']['delay'],
+                                                self.simulated_tcp[90].dataset['rx_pdcp']['time']),
+
+                DataProcessor.get_avg_by_second(self.simulated_tcp[120].dataset['rx_pdcp']['delay'],
+                                                self.simulated_tcp[120].dataset['rx_pdcp']['time']),
+            ],
+            [30, 60, 90, 120],
+            'Usuários ativos',
+            'Atraso (ms)',
+            'Média de Atraso por Cenário',
+            './plots/delay_usuarios_tcp.png'
+        )
+
+        PlotProcessor.plot_by_ue(
+            [
+                DataProcessor.get_jitter(self.simulated_tcp[30].dataset['rx_pdcp']['delay'],
+                                         self.simulated_tcp[30].dataset['rx_pdcp']['time']),
+
+                DataProcessor.get_jitter(self.simulated_tcp[60].dataset['rx_pdcp']['delay'],
+                                         self.simulated_tcp[60].dataset['rx_pdcp']['time']),
+
+                DataProcessor.get_jitter(self.simulated_tcp[90].dataset['rx_pdcp']['delay'],
+                                         self.simulated_tcp[90].dataset['rx_pdcp']['time']),
+
+                DataProcessor.get_jitter(self.simulated_tcp[120].dataset['rx_pdcp']['delay'],
+                                         self.simulated_tcp[120].dataset['rx_pdcp']['time']),
+            ],
+            [30, 60, 90, 120],
+            'Usuários ativos',
+            'Jitter (ms)',
+            'Média de $\it{Jitter}$ por Cenário',
+            './plots/jitter_usuarios_tcp.png'
+        )
+
+        PlotProcessor.plot_by_ue(
+            [
+                DataProcessor.get_packet_loss_ratio(self.simulated_tcp[30].dataset['rx_pdcp']['time'],
+                                                    self.simulated_tcp[30].dataset['tx_pdcp']['time']),
+
+                DataProcessor.get_packet_loss_ratio(self.simulated_tcp[60].dataset['rx_pdcp']['time'],
+                                                    self.simulated_tcp[60].dataset['tx_pdcp']['time']),
+
+                DataProcessor.get_packet_loss_ratio(self.simulated_tcp[90].dataset['rx_pdcp']['time'],
+                                                    self.simulated_tcp[90].dataset['tx_pdcp']['time']),
+
+                DataProcessor.get_packet_loss_ratio(self.simulated_tcp[120].dataset['rx_pdcp']['time'],
+                                                    self.simulated_tcp[120].dataset['tx_pdcp']['time'])
+            ],
+            [30, 60, 90, 120],
+            'Usuários ativos',
+            '$\it{PLR}$ (%)',
+            'Média de $\it{PLR}$ por Cenário',
+            './plots/plr_usuarios_tcp.png',
+            True
         )
 
 

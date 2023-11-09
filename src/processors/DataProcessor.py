@@ -90,12 +90,15 @@ class DataProcessor:
             aux_tx.append(value_tx)
             aux_rx.append(value_rx)
             if current_time != previous_time:
-                # Percentage of packets delivered
                 pdr.append(len(aux_rx) / len(aux_tx) * 100)
                 aux_tx = []
                 aux_rx = []
 
         return pdr
+
+    @staticmethod
+    def get_packet_loss_ratio(tx_packets, rx_packets):
+        return 1 - (len(rx_packets) / len(tx_packets))
 
     @staticmethod
     def get_not_attacked_packets(data):

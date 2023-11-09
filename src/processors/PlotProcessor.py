@@ -37,7 +37,7 @@ class PlotProcessor:
         plot_maker.show()
 
     @staticmethod
-    def plot_delay(data, legend, title='Medidas de Atraso', file_path=None, UEs=None, is_attack=None):
+    def plot_delay(data, legend, title='Medidas de Atraso', file_path=None, is_attack=None):
         try:
             NotAListError.is_list(data)
         except NotAListError as e:
@@ -64,10 +64,7 @@ class PlotProcessor:
         else:
             for value in data:
                 time.append(DataProcessor.convert_time_to_set(DataProcessor.get_time_stamps(value['time'])))
-                if UEs:
-                    delay.append(DataProcessor.get_avg_by_second(value['delay'], value['time'], scale=1e3))
-                else:
-                    delay.append(DataProcessor.get_avg_by_second(value['delay'], value['time']))
+                delay.append(DataProcessor.get_avg_by_second(value['delay'], value['time'], scale=1e3))
 
         plot_maker.plot(time, delay, legend)
         if file_path:
@@ -75,7 +72,7 @@ class PlotProcessor:
         plot_maker.show()
 
     @staticmethod
-    def plot_jitter(data, legend, title='Medidas de $\it{Jitter}$', file_path=None, UEs=None, is_attack=None):
+    def plot_jitter(data, legend, title='Medidas de $\it{Jitter}$', file_path=None, is_attack=None):
         try:
             NotAListError.is_list(data)
         except NotAListError as e:
@@ -102,12 +99,31 @@ class PlotProcessor:
         else:
             for value in data:
                 time.append(DataProcessor.convert_time_to_set(DataProcessor.get_time_stamps(value['time'])))
-                if UEs:
-                    jitter.append(DataProcessor.get_jitter(value['delay'], value['time']))
-                else:
-                    jitter.append(DataProcessor.get_jitter(value['delay'], value['time']))
+                jitter.append(DataProcessor.get_jitter(value['delay'], value['time']))
 
         plot_maker.plot(time, jitter, legend)
+        if file_path:
+            plot_maker.save(file_path)
+        plot_maker.show()
+
+    @staticmethod
+    def plot_by_ue(data, x_axis, x_label, y_label, title, file_path=None, is_plr=False):
+        try:
+            NotAListError.is_list(data)
+            NotAListError.is_list(x_axis)
+        except NotAListError as e:
+            print('NotAListError found:', e)
+
+        plot_maker = PlotMaker.instance()
+        plot_maker.create_plot(x_label, y_label, title)
+
+        y_axis = []
+
+        for value in data:
+            y_axis.append(DataProcessor.get_average(value) if not is_plr
+                          else abs(value))
+
+        plot_maker.plot(x_axis, y_axis, ms='s')
         if file_path:
             plot_maker.save(file_path)
         plot_maker.show()

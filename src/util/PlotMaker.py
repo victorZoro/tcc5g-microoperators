@@ -18,12 +18,12 @@ class PlotMaker:
         plt.ticklabel_format(style=ticklabel_format)
         locale.setlocale(locale.LC_NUMERIC, "pt_BR")
 
-    def plot(self, x, y, legend=None, marker_style=None):
+    def plot(self, x, y, legend=None, ls='dashed', col='blue', ms=None):
         if any(isinstance(item, list) for item in (x[0], y[0])):
             for index, (i, j) in enumerate(zip(x, y)):
-                plt.plot(i, j, linestyle=self.line_styles[index], marker=marker_style)
+                plt.plot(i, j, linestyle=self.line_styles[index], marker=ms, linewidth=2)
         else:
-            plt.plot(x, y, marker=marker_style)
+            plt.plot(x, y, linestyle=ls, marker=ms, linewidth=2, markersize=15)
 
         if legend:
             plt.legend(legend)
