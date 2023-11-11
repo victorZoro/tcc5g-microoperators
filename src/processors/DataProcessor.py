@@ -98,7 +98,7 @@ class DataProcessor:
 
     @staticmethod
     def get_packet_loss_ratio(tx_packets, rx_packets):
-        return 1 - (len(rx_packets) / len(tx_packets))
+        return (1 - (len(rx_packets) / len(tx_packets))) * 100
 
     @staticmethod
     def get_not_attacked_packets(data):

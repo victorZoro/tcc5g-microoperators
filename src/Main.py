@@ -53,7 +53,7 @@ class Main:
             './plots/pdcp_delay_tempo_tcp.png'
         )
 
-        # Dataset por SOUSA et al. (2023)
+        # Dataset por Sousa, Magaia e Silva (2023)
         PlotProcessor.plot_delay(
             [
                 self.collected[2].dataset,
@@ -62,7 +62,7 @@ class Main:
                 self.collected[9].dataset
             ],
             ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-            'Medidas de Atraso com Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            'Medidas de Atraso com Ataques à Rede (Dataset por Sousa, Magaia e Silva (2023))',
             './plots/delay_tempo_dataset_attacked.png'
         )
 
@@ -74,7 +74,7 @@ class Main:
                 self.collected[9].dataset
             ],
             ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-            'Medidas de Atraso sem Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            'Medidas de Atraso sem Ataques à Rede (Dataset por Sousa, Magaia e Silva (2023))',
             './plots/delay_tempo_dataset_not_attacked.png',
             is_attack=0
         )
@@ -93,7 +93,7 @@ class Main:
             './plots/pdcp_jitter_tempo_tcp.png'
         )
 
-        # Dataset por SOUSA et al. (2023)
+        # Dataset por Sousa, Magaia e Silva (2023)
         PlotProcessor.plot_jitter(
             [
                 self.collected[2].dataset,
@@ -102,7 +102,7 @@ class Main:
                 self.collected[9].dataset
             ],
             ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-            'Medidas de $\it{Jitter}$ com Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            'Medidas de $\it{Jitter}$ com Ataques à Rede (Dataset por Sousa, Magaia e Silva (2023))',
             './plots/jitter_tempo_dataset_attacked.png'
         )
 
@@ -114,7 +114,7 @@ class Main:
                 self.collected[9].dataset
             ],
             ['2 attackers', '4 attackers', '7 attackers', '9 attackers'],
-            'Medidas de $\it{Jitter}$ sem Ataques à Rede (Dataset por SOUSA et al. (2023))',
+            'Medidas de $\it{Jitter}$ sem Ataques à Rede (Dataset por Sousa, Magaia e Silva (2023))',
             './plots/jitter_tempo_dataset_not_attacked.png',
             is_attack=0
         )
@@ -145,16 +145,20 @@ class Main:
         PlotProcessor.plot_by_ue(
             [
                 DataProcessor.get_avg_by_second(self.simulated_tcp[30].dataset['rx_pdcp']['delay'],
-                                                self.simulated_tcp[30].dataset['rx_pdcp']['time']),
+                                                self.simulated_tcp[30].dataset['rx_pdcp']['time'],
+                                                1e3),
 
                 DataProcessor.get_avg_by_second(self.simulated_tcp[60].dataset['rx_pdcp']['delay'],
-                                                self.simulated_tcp[60].dataset['rx_pdcp']['time']),
+                                                self.simulated_tcp[60].dataset['rx_pdcp']['time'],
+                                                1e3),
 
                 DataProcessor.get_avg_by_second(self.simulated_tcp[90].dataset['rx_pdcp']['delay'],
-                                                self.simulated_tcp[90].dataset['rx_pdcp']['time']),
+                                                self.simulated_tcp[90].dataset['rx_pdcp']['time'],
+                                                1e3),
 
                 DataProcessor.get_avg_by_second(self.simulated_tcp[120].dataset['rx_pdcp']['delay'],
-                                                self.simulated_tcp[120].dataset['rx_pdcp']['time']),
+                                                self.simulated_tcp[120].dataset['rx_pdcp']['time'],
+                                                1e3),
             ],
             [30, 60, 90, 120],
             'Usuários ativos',
